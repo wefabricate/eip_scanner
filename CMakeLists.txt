@@ -26,29 +26,6 @@ if (WIN32)
 	endif()
 endif()
 
-# Setup the include structure so that every file is based off of the root of the project
-include_directories(src)
-
-# Actually add the source files for the project
-add_subdirectory(src/${CMAKE_PROJECT_NAME})
-
-if (EXAMPLE_ENABLED)
-    set(EXAMPLES_DIR ${CMAKE_CURRENT_SOURCE_DIR}/examples)
-
-    # Create the build directory if it doesn't exist
-    file(MAKE_DIRECTORY ${EXAMPLES_DIR}/build)
-    
-    # Run the other CMakeLists.txt file without any dependencies on this file
-    execute_process(COMMAND ${CMAKE_COMMAND} ${EXAMPLES_DIR} WORKING_DIRECTORY ${EXAMPLES_DIR}/build)
-
-    # Execute code during a `cmake --build` command
-    add_custom_target(EXAMPLES_TARGETS ALL COMMAND ${CMAKE_COMMAND} --build ${EXAMPLES_DIR}/build WORKING_DIRECTORY ${EXAMPLES_DIR}/build COMMENT "Building the examples sub-project")
-endif()
-
-if (TEST_ENABLED)
-    add_subdirectory(test)
-endif()
-
 set(INSTALL_CMAKE_DIR share/EIPScanner/cmake CACHE PATH
     "Installation directory for CMake files")
 # ... for the build tree
@@ -83,3 +60,12 @@ install(FILES
   "${PROJECT_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/EIPScannerConfig.cmake"
   "${PROJECT_BINARY_DIR}/EIPScannerConfigVersion.cmake"
   DESTINATION "${INSTALL_CMAKE_DIR}" COMPONENT dev)
+
+add_subdirectory(src)
+if (EXAMPLE_ENABLED)
+    add_subdirectory(examples)
+endif()
+
+if (TEST_ENABLED)
+    add_subdirectory(test)
+endif()
