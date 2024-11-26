@@ -56,6 +56,7 @@ add_library(EIPScannerS STATIC ${SOURCE_FILES} ${VENDOR_FILES})
 if(WIN32)
 	target_link_libraries(EIPScanner ws2_32)
 	target_link_libraries(EIPScannerS ws2_32)
+        set_target_properties(EIPScannerS PROPERTIES OUTPUT_NAME "EIPScanner")
 endif()
 
 set_target_properties(

@@ -132,7 +132,7 @@ namespace eipScanner {
 				Close();
 				throw;
 			}
-
+			socket_scope_cleanup_instance.do_not_cleanup();	
 		}
 
 
