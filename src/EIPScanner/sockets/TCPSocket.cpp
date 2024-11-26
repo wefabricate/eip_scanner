@@ -56,7 +56,7 @@ namespace eipScanner {
 				socket_scope_cleanup(TCPSocket* socket):socket_(socket){}
 				~socket_scope_cleanup() {
 					if(should_cleanup) {
-						Logger(LogLevel::DEBUG) << "Close TCP socket fd=" << _sockedFd;
+						Logger(LogLevel::DEBUG) << "Close TCP socket fd=" << socket_->_sockedFd;
 						socket_->Shutdown();
 						socket_->Close();
 					}
