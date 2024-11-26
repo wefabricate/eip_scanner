@@ -8,7 +8,7 @@ set(EIPSCANNER_FULL_VERSION ${EIPSCANNER_MAJOR_VERSION}.${EIPSCANNER_MINOR_VERSI
 project(EIPScanner VERSION ${EIPSCANNER_FULL_VERSION})
 
 set(CMAKE_CXX_STANDARD 20)
-option(ENABLE_VENDOR_SRC "Enable vendor source" ON)
+option(ENABLE_VENDOR_SRC "Enable vendor source" OFF)
 option(TEST_ENABLED "Enable unit test" OFF)
 option(EXAMPLE_ENABLED "Build examples" OFF)
 
@@ -25,7 +25,7 @@ endif()
 set(INSTALL_CMAKE_DIR share/EIPScanner/cmake CACHE PATH
     "Installation directory for CMake files")
 # ... for the build tree
-set(INSTALL_INCLUDE_DIR include/EIPScanner CACHE PATH
+set(INSTALL_INCLUDE_DIR include CACHE PATH
       "Installation directory for header files")
 # ... for the build tree
 set(INSTALL_LIB_DIR lib CACHE PATH
@@ -57,9 +57,23 @@ install(FILES
   "${PROJECT_BINARY_DIR}/EIPScannerConfigVersion.cmake"
   DESTINATION "${INSTALL_CMAKE_DIR}" COMPONENT dev)
 
-add_subdirectory(src)
+# Setup the include structure so that every file is based off of the root of the project
+include_directories(src)
+
+# Actually add the source files for the project
+add_subdirectory(src/${CMAKE_PROJECT_NAME})
+
 if (EXAMPLE_ENABLED)
-    add_subdirectory(examples)
+  set(EXAMPLES_DIR ${CMAKE_CURRENT_SOURCE_DIR}/examples)
+
+  # Create the build directory if it doesn't exist
+  file(MAKE_DIRECTORY ${EXAMPLES_DIR}/build)
+
+  # Run the other CMakeLists.txt file without any dependencies on this file
+  execute_process(COMMAND ${CMAKE_COMMAND} ${EXAMPLES_DIR} WORKING_DIRECTORY ${EXAMPLES_DIR}/build)
+
+  # Execute code during a `cmake --build` command
+  add_custom_target(EXAMPLES_TARGETS ALL COMMAND ${CMAKE_COMMAND} --build ${EXAMPLES_DIR}/build WORKING_DIRECTORY ${EXAMPLES_DIR}/build COMMENT "Building the examples sub-project")
 endif()
 
 if (TEST_ENABLED)

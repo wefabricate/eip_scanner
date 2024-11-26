@@ -46,9 +46,9 @@ set(SOURCE_FILES
         SessionInfo.cpp)
 
 # if vendor scripts are enabled
-if(ENABLE_VENDOR_SRC)
-	add_subdirectory(vendor)
-endif()
+# if(ENABLE_VENDOR_SRC)
+# 	add_subdirectory(vendor)
+# endif()
 
 add_library(EIPScanner SHARED ${SOURCE_FILES} ${VENDOR_FILES})
 add_library(EIPScannerS STATIC ${SOURCE_FILES} ${VENDOR_FILES})
