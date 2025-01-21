@@ -12,6 +12,7 @@
 #include "eip_scanner/cip/Services.h"
 #include "eip_scanner/cip/Types.h"
 #include "eip_scanner/sockets/UDPBoundSocket.h"
+#include <mutex>
 
 namespace eipScanner {
 	/**
@@ -76,6 +77,7 @@ namespace eipScanner {
 	private:
 		MessageRouter::SPtr _messageRouter;
 		std::map<cip::CipUint, IOConnection::SPtr> _connectionMap;
+		std::mutex _connectionMutex;
 		std::map<sockets::EndPoint, std::shared_ptr<sockets::UDPBoundSocket>> _socketMap;
 
 		sockets::UDPBoundSocket::SPtr  findOrCreateSocket(const sockets::EndPoint& endPoint);
