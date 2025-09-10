@@ -125,29 +125,34 @@ namespace sockets {
 		auto startTime = std::chrono::steady_clock::now();
 		auto stopTime = startTime + timeout;
 		int ready;
+
 		do {
 			timeval tv = makePortableInterval(std::chrono::duration_cast<std::chrono::milliseconds>(stopTime-startTime));
-
+			
 			fd_set recvSet;
 			FD_ZERO(&recvSet);
 			for (auto& sock : sockets) {
 				FD_SET(sock->getSocketFd(), &recvSet);
 			}
-
+			
 			ready = ::select(socketWithMaxFd->getSocketFd() + 1, &recvSet, NULL, NULL, &tv);
 			if (ready < 0) {
 				throw std::system_error(BaseSocket::getLastError(), BaseSocket::getErrorCategory());
 			}
-
+			
+			std::vector<BaseSocket::SPtr> unprocessedSockets;
+			unprocessedSockets.reserve(sockets.size());
 			for (auto& sock : sockets) {
 				if (FD_ISSET(sock->getSocketFd(), &recvSet)) {
 					sock->BeginReceive();
 					continue;
 				}
+				unprocessedSockets.push_back(sock);
 			}
+			sockets = std::move(unprocessedSockets);
 
 			startTime = std::chrono::steady_clock::now();
-		} while(ready > 0);
+		} while(ready > 0 && startTime < stopTime && !sockets.empty());
 	}
 
 	const EndPoint &BaseSocket::getRemoteEndPoint() const {
