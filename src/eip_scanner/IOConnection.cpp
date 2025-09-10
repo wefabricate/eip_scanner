@@ -8,6 +8,7 @@
 #include "eip_scanner/cip/connectionManager/NetworkConnectionParams.h"
 #include "eip_scanner/utils/Buffer.h"
 #include "eip_scanner/utils/Logger.h"
+#include "eip_scanner/tracing/eip_tracepoint.h"
 
 namespace eip_scanner {
 	using utils::Logger;
@@ -78,6 +79,7 @@ namespace eip_scanner {
 		if ((_transportTypeTrigger & NetworkConnectionParams::CLASS1) > 0
 			|| (_transportTypeTrigger & NetworkConnectionParams::CLASS3) > 0) {
 			buffer >> sequenceValueCount;
+			lttng_ust_tracepoint(eip_scanner, transmission_event, "Receive_data", sequenceValueCount, _t2oNetworkConnectionId);
 		}
 
 		std::vector<uint8_t> ioData(data.begin() + buffer.pos(), data.end());
@@ -87,8 +89,10 @@ namespace eip_scanner {
 				<< " bytes were received. Ignore this data.";
 		} else {
 			_connectionTimeoutCount = 0;
+			lttng_ust_tracepoint(eip_scanner, span_start, "process_receive", 40 + _t2oNetworkConnectionId);
 			_receiveDataHandle(runtimeHeader, sequenceValueCount,
 							   ioData);
+			lttng_ust_tracepoint(eip_scanner, span_stop, 40 + _t2oNetworkConnectionId);
 		}
 	}
 
@@ -129,7 +133,9 @@ namespace eip_scanner {
 			}
 
 			_o2tTimer = 0;
+			lttng_ust_tracepoint(eip_scanner, span_start, "process_send", 30 + _o2tNetworkConnectionId);
 			_sendDataHandle(_outputData);
+			lttng_ust_tracepoint(eip_scanner, span_stop, 30 + _o2tNetworkConnectionId);
 			if (_o2tFixedSize && _outputData.size() != _o2tDataSize)  {
 				Logger(LogLevel::WARNING) << "Connection O2T_ID=" << _o2tNetworkConnectionId
 										  << " has fixed size " << _o2tDataSize << " bytes but " << _outputData.size()
@@ -138,6 +144,7 @@ namespace eip_scanner {
 				buffer << _outputData;
 				commonPacket << factory.createConnectedDataItem(buffer.data());
 
+				lttng_ust_tracepoint(eip_scanner, transmission_event, "Send_data", _o2tSequenceNumber, _o2tNetworkConnectionId);
 				_socket->Send(commonPacket.pack());
 			}
 		}

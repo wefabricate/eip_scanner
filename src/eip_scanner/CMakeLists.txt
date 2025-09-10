@@ -50,14 +50,26 @@ if(ENABLE_VENDOR_SRC)
     add_subdirectory(vendor)
 endif()
 
+if(UNIX AND NOT APPLE)
+    list(APPEND SOURCE_FILES tracing/eip_tracepoint.c)
+endif()
+
 add_library(eip_scanner ${SOURCE_FILES} ${VENDOR_FILES})
 # add_library(eip_scannerS STATIC ${SOURCE_FILES} ${VENDOR_FILES})
 
-if(WIN32)
-	target_link_libraries(eip_scanner ws2_32)
-        if (BUILD_SHARED_LIBS)
-            set_target_properties(eip_scanner PROPERTIES OUTPUT_NAME "eip_scanner")
-        endif()
+if (WIN32)
+    list(APPEND LIBRARY_DEPENDENCIES ws2_32)
+    if (BUILD_SHARED_LIBS)
+        set_target_properties(eip_scanner PROPERTIES OUTPUT_NAME "eip_scanner")
+    endif()
+endif()
+
+if(UNIX AND NOT APPLE)
+    list(APPEND LIBRARY_DEPENDENCIES lttng-ust)
+endif()
+
+if (${LIBRARY_DEPENDENCIES})
+    target_link_libraries(eip_scanner ${LIBRARY_DEPENDENCIES})
 endif()
 
 set_target_properties(

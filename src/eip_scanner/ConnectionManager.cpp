@@ -16,6 +16,7 @@
 #include "eip_scanner/cip/connectionManager/NetworkConnectionParametersBuilder.h"
 #include "eip_scanner/utils/Logger.h"
 #include "eip_scanner/utils/Buffer.h"
+#include "eip_scanner/tracing/eip_tracepoint.h"
 
 namespace eip_scanner {
 	using namespace cip::connectionManager;
@@ -204,6 +205,8 @@ namespace eip_scanner {
 	}
 
 	void ConnectionManager::handleConnections(std::chrono::milliseconds timeout) {
+		lttng_ust_tracepoint(eip_scanner, span_start, "handle_connections", 1);
+
 		std::vector<BaseSocket::SPtr > sockets;
 		std::transform(_socketMap.begin(), _socketMap.end(), std::back_inserter(sockets), [](auto entry) {
 			auto fd = entry.second->getSocketFd();
@@ -211,20 +214,27 @@ namespace eip_scanner {
 			return entry.second;
 		});
 
+		lttng_ust_tracepoint(eip_scanner, span_start, "receive_data", 2);
 		BaseSocket::select(sockets, timeout);
+		lttng_ust_tracepoint(eip_scanner, span_stop, 2);
 
 		std::lock_guard<std::mutex> guard(_connectionMutex);
 		std::vector<cip::CipUdint> connectionsToClose;
 
+		int span_id_idx = 0;
 		for (auto& entry : _connectionMap) {
+			lttng_ust_tracepoint(eip_scanner, span_start, "process_send", 10 + span_id_idx);
 			if (!entry.second->notifyTick()) {
 				connectionsToClose.push_back(entry.first);
 			}
+			lttng_ust_tracepoint(eip_scanner, span_stop, 10 + span_id_idx);
+			span_id_idx++;
 		}
 
 		for (auto& id : connectionsToClose) {
 			_connectionMap.erase(id);
 		}
+		lttng_ust_tracepoint(eip_scanner, span_stop, 1);
 	}
 
 	UDPBoundSocket::SPtr ConnectionManager::findOrCreateSocket(const sockets::EndPoint& endPoint) {
