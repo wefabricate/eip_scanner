@@ -46,17 +46,18 @@ set(SOURCE_FILES
         SessionInfo.cpp)
 
 # if vendor scripts are enabled
-# if(ENABLE_VENDOR_SRC)
-# 	add_subdirectory(vendor)
-# endif()
+if(ENABLE_VENDOR_SRC)
+    add_subdirectory(vendor)
+endif()
 
-add_library(eip_scanner SHARED ${SOURCE_FILES} ${VENDOR_FILES})
-add_library(eip_scannerS STATIC ${SOURCE_FILES} ${VENDOR_FILES})
+add_library(eip_scanner ${SOURCE_FILES} ${VENDOR_FILES})
+# add_library(eip_scannerS STATIC ${SOURCE_FILES} ${VENDOR_FILES})
 
 if(WIN32)
 	target_link_libraries(eip_scanner ws2_32)
-	target_link_libraries(eip_scannerS ws2_32)
-        set_target_properties(eip_scannerS PROPERTIES OUTPUT_NAME "eip_scanner")
+        if (BUILD_SHARED_LIBS)
+            set_target_properties(eip_scanner PROPERTIES OUTPUT_NAME "eip_scanner")
+        endif()
 endif()
 
 set_target_properties(
@@ -65,7 +66,7 @@ set_target_properties(
         VERSION ${EIPSCANNER_FULL_VERSION}
         SOVERSION ${EIPSCANNER_MAJOR_VERSION})
 
-install(TARGETS eip_scanner eip_scannerS
+install(TARGETS eip_scanner
         LIBRARY
             DESTINATION "${INSTALL_LIB_DIR}"
         ARCHIVE
