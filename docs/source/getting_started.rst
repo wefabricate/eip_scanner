@@ -66,10 +66,10 @@ Okay, we have *CMakeLists.txt*. Now we should create *main.cpp* and place there 
    #include <eip_scanner/utils/Logger.h>
    #include <eip_scanner/utils/Buffer.h>
 
-   using eipScanner::SessionInfo;
-   using eipScanner::MessageRouter;
-   using namespace eipScanner::cip;
-   using namespace eipScanner::utils;
+   using eip_scanner::SessionInfo;
+   using eip_scanner::MessageRouter;
+   using namespace eip_scanner::cip;
+   using namespace eip_scanner::utils;
 
    int main() {
            Logger::setLogLevel(LogLevel::DEBUG);

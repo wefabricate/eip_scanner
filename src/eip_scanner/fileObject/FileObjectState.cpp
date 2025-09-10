@@ -10,7 +10,7 @@
 #include "eip_scanner/fileObject/FileObjectLoadedState.h"
 #include "eip_scanner/fileObject/FileObjectUploadInProgressState.h"
 
-namespace eipScanner {
+namespace eip_scanner {
 namespace fileObject {
 	using utils::Logger;
 	using utils::LogLevel;

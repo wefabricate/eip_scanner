@@ -6,7 +6,7 @@
 #include "Mocks.h"
 #include "eip_scanner/IdentityObject.h"
 
-using namespace eipScanner;
+using namespace eip_scanner;
 
 class TestIdentityObject : public ::testing::Test {
 public:

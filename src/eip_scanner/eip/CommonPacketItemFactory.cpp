@@ -5,7 +5,7 @@
 #include "eip_scanner/eip/CommonPacketItemFactory.h"
 #include "eip_scanner/utils/Buffer.h"
 
-namespace eipScanner {
+namespace eip_scanner {
 namespace eip {
 	using utils::Buffer;
 

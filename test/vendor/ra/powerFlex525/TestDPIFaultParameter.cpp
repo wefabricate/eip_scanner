@@ -8,8 +8,8 @@
 #include "eip_scanner/vendor/ra/powerFlex525/DPIFaultObject.h"
 #include "eip_scanner/vendor/ra/powerFlex525/DPIFaultParameter.h"
 
-using namespace eipScanner;
-using namespace eipScanner::vendor::ra::powerFlex525;
+using namespace eip_scanner;
+using namespace eip_scanner::vendor::ra::powerFlex525;
 
 class TestDPIParameterObject : public ::testing::Test {
 public:

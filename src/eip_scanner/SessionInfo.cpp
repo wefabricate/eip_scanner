@@ -9,7 +9,7 @@
 #include "eip_scanner/eip/EncapsPacket.h"
 #include "eip_scanner/eip/EncapsPacketFactory.h"
 
-namespace eipScanner {
+namespace eip_scanner {
 
 	using utils::Logger;
 	using utils::LogLevel;

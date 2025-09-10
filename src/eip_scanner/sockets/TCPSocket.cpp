@@ -19,10 +19,10 @@
 #include "eip_scanner/sockets/TCPSocket.h"
 #include "eip_scanner/sockets/Platform.h"
 
-namespace eipScanner {
+namespace eip_scanner {
 	namespace sockets {
-		using eipScanner::utils::Logger;
-		using eipScanner::utils::LogLevel;
+		using eip_scanner::utils::Logger;
+		using eip_scanner::utils::LogLevel;
 
 		TCPSocket::TCPSocket(std::string host, int port)
 				: TCPSocket(EndPoint(host, port)) {

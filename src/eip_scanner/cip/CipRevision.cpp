@@ -4,7 +4,7 @@
 
 #include "eip_scanner/cip/CipRevision.h"
 
-namespace eipScanner {
+namespace eip_scanner {
 namespace cip {
 
 	CipRevision::CipRevision()

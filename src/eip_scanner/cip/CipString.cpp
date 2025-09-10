@@ -4,7 +4,7 @@
 
 #include "eip_scanner/cip/CipString.h"
 
-namespace eipScanner {
+namespace eip_scanner {
 namespace cip {
 
 

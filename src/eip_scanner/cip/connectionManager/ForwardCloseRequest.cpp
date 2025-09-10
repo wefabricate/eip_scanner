@@ -4,7 +4,7 @@
 #include "eip_scanner/cip/connectionManager/ForwardCloseRequest.h"
 #include "eip_scanner/utils/Buffer.h"
 
-namespace eipScanner {
+namespace eip_scanner {
 namespace cip {
 namespace connectionManager {
 	using utils::Buffer;

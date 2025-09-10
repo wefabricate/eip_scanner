@@ -11,7 +11,7 @@
 #include "eip_scanner/cip/Services.h"
 #include "eip_scanner/cip/EPath.h"
 
-namespace eipScanner {
+namespace eip_scanner {
 namespace cip {
 	class MessageRouterRequest {
 	public:

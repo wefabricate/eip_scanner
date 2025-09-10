@@ -6,7 +6,7 @@
 #include "eip_scanner/utils/Logger.h"
 
 int main(int argc, char **argv) {
-	eipScanner::utils::Logger::setLogLevel(eipScanner::utils::LogLevel::DEBUG);
+	eip_scanner::utils::Logger::setLogLevel(eip_scanner::utils::LogLevel::DEBUG);
 
 	testing::InitGoogleTest(&argc, argv);
 	return RUN_ALL_TESTS();

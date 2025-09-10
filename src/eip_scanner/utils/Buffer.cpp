@@ -4,7 +4,7 @@
 
 #include "eip_scanner/utils/Buffer.h"
 
-namespace eipScanner {
+namespace eip_scanner {
 namespace utils {
 
 	Buffer::Buffer(size_t capacity) : _buffer(0), _position{0} {

@@ -56,10 +56,10 @@ This sounds a bit abstract. Let's see how it will be implemented in code:
    #include <eip_scanner/utils/Logger.h>
    #include <eip_scanner/utils/Buffer.h>
 
-   using eipScanner::SessionInfo;
-   using eipScanner::MessageRouter;
-   using namespace eipScanner::cip;
-   using namespace eipScanner::utils;
+   using eip_scanner::SessionInfo;
+   using eip_scanner::MessageRouter;
+   using namespace eip_scanner::cip;
+   using namespace eip_scanner::utils;
 
    int main() {
            try {

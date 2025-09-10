@@ -7,7 +7,7 @@
 #if defined(_WIN32) || defined(WIN32) || defined(_WIN64)
 #include <windows.h>
 
-namespace eipScanner {
+namespace eip_scanner {
 namespace sockets {
   char const* win32ErrorCategory::name() const noexcept {
     return "Win32Error";

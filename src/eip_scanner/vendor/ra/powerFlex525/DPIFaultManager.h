@@ -11,7 +11,7 @@
 #include "eip_scanner/SessionInfoIf.h"
 #include "eip_scanner/vendor/ra/powerFlex525/DPIFaultParameter.h"
 
-namespace eipScanner {
+namespace eip_scanner {
 namespace vendor {
 namespace ra {
 namespace powerFlex525 {

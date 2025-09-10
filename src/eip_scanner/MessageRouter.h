@@ -12,7 +12,7 @@
 #include "eip_scanner/eip/CommonPacketItem.h"
 #include "eip_scanner/SessionInfo.h"
 
-namespace eipScanner {
+namespace eip_scanner {
 	/**
 	* @class MessageRouter
 	*
@@ -37,10 +37,10 @@ namespace eipScanner {
 		/**
 		 * @brief Sends an explicit requests to the EIP adapter by calling a CIP service
 		 * @param si the EIP session with the adapter
-		 * @param service the service code (for standard codes see eipScanner::cip::ServiceCodes)
+		 * @param service the service code (for standard codes see eip_scanner::cip::ServiceCodes)
 		 * @param path the path to an element in Object Model that provides the called service
 		 * @param data the encoded arguments of the service
-		 * @param additionalPacketItems (needed only for eipScanner::ConnectionManager)
+		 * @param additionalPacketItems (needed only for eip_scanner::ConnectionManager)
 		 * @return the received response from the EIP adapter
 		 * @throw std::runtime_error
 		 * @throw std::system_error
@@ -52,7 +52,7 @@ namespace eipScanner {
 		/**
 		 * @brief Sends an explicit requests to the EIP adapter by calling a CIP service
 		 * @param si the EIP session with the adapter
-		 * @param service the service code (for standard codes see eipScanner::cip::ServiceCodes)
+		 * @param service the service code (for standard codes see eip_scanner::cip::ServiceCodes)
 		 * @param path the path to an element in Object Model that provides the called service
 		 * @param data the encoded arguments of the service
 		 * @return the received response from the EIP adapter
@@ -65,7 +65,7 @@ namespace eipScanner {
 		/**
 		 * @brief Sends an explicit requests to the EIP adapter by calling a CIP service
 		 * @param si the EIP session with the adapter
-		 * @param service the service code (for standard codes see eipScanner::cip::ServiceCodes)
+		 * @param service the service code (for standard codes see eip_scanner::cip::ServiceCodes)
 		 * @param path the path to an element in Object Model that provides the called service
 		 * @return the received response from the EIP adapter
 		 * @throw std::runtime_error

@@ -8,7 +8,7 @@
 #include "eip_scanner/eip/EncapsPacket.h"
 #include "eip_scanner/cip/Types.h"
 
-namespace eipScanner {
+namespace eip_scanner {
 namespace eip {
 	class EncapsPacketFactory {
 	public:

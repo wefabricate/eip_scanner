@@ -6,7 +6,7 @@
 #include "eip_scanner/utils/Logger.h"
 #include "eip_scanner/vendor/ra/powerFlex525/DPIFaultManager.h"
 
-namespace eipScanner {
+namespace eip_scanner {
 namespace vendor {
 namespace ra {
 namespace powerFlex525 {

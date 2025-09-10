@@ -2,8 +2,8 @@
 #include <gtest/gtest.h>
 #include "eip_scanner/utils/Buffer.h"
 
-using namespace eipScanner;
-using eipScanner::utils::Buffer;
+using namespace eip_scanner;
+using eip_scanner::utils::Buffer;
 
 TEST(TestBuffer, PushUint8) {
 	Buffer buf;

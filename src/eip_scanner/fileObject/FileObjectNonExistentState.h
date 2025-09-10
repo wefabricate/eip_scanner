@@ -7,7 +7,7 @@
 
 #include "eip_scanner/fileObject/FileObjectState.h"
 
-namespace eipScanner {
+namespace eip_scanner {
 namespace fileObject {
 
 	class FileObjectNonExistentState : public FileObjectState {

@@ -6,7 +6,7 @@
 #include "eip_scanner/utils/Buffer.h"
 #include "eip_scanner/cip/Types.h"
 
-namespace eipScanner {
+namespace eip_scanner {
 namespace eip {
 	using utils::Buffer;
 

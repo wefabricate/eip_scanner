@@ -10,7 +10,7 @@
 #include <memory>
 #include "eip_scanner/sockets/BaseSocket.h"
 
-namespace eipScanner {
+namespace eip_scanner {
 namespace sockets {
 
 	class UDPSocket : public BaseSocket{

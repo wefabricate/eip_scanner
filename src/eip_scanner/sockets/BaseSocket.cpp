@@ -17,7 +17,7 @@
 #include "eip_scanner/sockets/BaseSocket.h"
 #include "eip_scanner/sockets/Platform.h"
 
-namespace eipScanner {
+namespace eip_scanner {
 namespace sockets {
 
 	BaseSocket::BaseSocket(EndPoint endPoint)

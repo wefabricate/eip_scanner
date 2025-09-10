@@ -10,7 +10,7 @@
 #include "eip_scanner/fileObject/FileObjectState.h"
 #include "eip_scanner/cip/Types.h"
 
-namespace eipScanner {
+namespace eip_scanner {
 namespace fileObject {
 	class FileObjectUploadInProgressState : public FileObjectState {
 	public:

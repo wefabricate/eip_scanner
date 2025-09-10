@@ -14,15 +14,15 @@
 #include <eip_scanner/utils/Logger.h>
 #include <eip_scanner/utils/Buffer.h>
 
-using namespace eipScanner::cip;
-using eipScanner::SessionInfo;
-using eipScanner::MessageRouter;
-using eipScanner::ConnectionManager;
-using eipScanner::cip::connectionManager::ConnectionParameters;
-using eipScanner::cip::connectionManager::NetworkConnectionParams;
-using eipScanner::utils::Buffer;
-using eipScanner::utils::Logger;
-using eipScanner::utils::LogLevel;
+using namespace eip_scanner::cip;
+using eip_scanner::SessionInfo;
+using eip_scanner::MessageRouter;
+using eip_scanner::ConnectionManager;
+using eip_scanner::cip::connectionManager::ConnectionParameters;
+using eip_scanner::cip::connectionManager::NetworkConnectionParams;
+using eip_scanner::utils::Buffer;
+using eip_scanner::utils::Logger;
+using eip_scanner::utils::LogLevel;
 
 int main() {
   Logger::setLogLevel(LogLevel::DEBUG);

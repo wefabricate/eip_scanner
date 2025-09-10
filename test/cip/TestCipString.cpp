@@ -7,8 +7,8 @@
 #include "eip_scanner/cip/CipString.h"
 #include "eip_scanner/utils/Buffer.h"
 
-using eipScanner::cip::CipBaseString;
-using eipScanner::utils::Buffer;
+using eip_scanner::cip::CipBaseString;
+using eip_scanner::utils::Buffer;
 
 TEST(TestCipString, ShuoldConvertToStdString) {
 	CipBaseString<uint8_t> cipString("Hello!");

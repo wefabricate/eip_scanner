@@ -7,7 +7,7 @@
 #include "eip_scanner/cip/Services.h"
 #include "eip_scanner/vendor/yaskawa/mp3300iec/Yaskawa_EPath.h"
 
-namespace eipScanner {
+namespace eip_scanner {
 namespace cip {
 	class Yaskawa_MessageRouterRequest {
 	public:

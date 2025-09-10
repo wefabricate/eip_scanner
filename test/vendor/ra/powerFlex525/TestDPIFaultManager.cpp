@@ -6,8 +6,8 @@
 #include "Mocks.h"
 #include "eip_scanner/vendor/ra/powerFlex525/DPIFaultManager.h"
 
-using namespace eipScanner;
-using namespace eipScanner::vendor::ra::powerFlex525;
+using namespace eip_scanner;
+using namespace eip_scanner::vendor::ra::powerFlex525;
 
 class TestDPIFaultManager : public ::testing::Test {
 public:

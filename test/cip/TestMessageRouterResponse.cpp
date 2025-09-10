@@ -5,7 +5,7 @@
 #include <gtest/gtest.h>
 #include "eip_scanner/cip/MessageRouterResponse.h"
 
-using eipScanner::cip::MessageRouterResponse;
+using eip_scanner::cip::MessageRouterResponse;
 
 TEST(TestMessageRouterResponse, ShouldThrowErroIfDataTooShort) {
 	std::vector<uint8_t> data = {0, 0, 0};

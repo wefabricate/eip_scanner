@@ -11,11 +11,11 @@
 #include "eip_scanner/fileObject/FileObjectState.h"
 #include "eip_scanner/utils/Buffer.h"
 
-namespace eipScanner {
+namespace eip_scanner {
 namespace fileObject {
 	using utils::Buffer;
-	using eipScanner::fileObject::FileObjectAttributesCodes;
-	using eipScanner::fileObject::FILE_OBJECT_CLASS_ID;
+	using eip_scanner::fileObject::FileObjectAttributesCodes;
+	using eip_scanner::fileObject::FILE_OBJECT_CLASS_ID;
 
 
 	static void mockGetFileObjectState(TMockMessageRouter::SPtr messageRouter,

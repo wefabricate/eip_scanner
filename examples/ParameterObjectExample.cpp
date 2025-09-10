@@ -11,13 +11,13 @@
 #include <eip_scanner/utils/Logger.h>
 #include <eip_scanner/utils/Buffer.h>
 
-using namespace eipScanner::cip;
-using eipScanner::SessionInfo;
-using eipScanner::MessageRouter;
-using eipScanner::utils::Logger;
-using eipScanner::utils::LogLevel;
-using eipScanner::ParameterObject;
-using eipScanner::utils::Buffer;
+using namespace eip_scanner::cip;
+using eip_scanner::SessionInfo;
+using eip_scanner::MessageRouter;
+using eip_scanner::utils::Logger;
+using eip_scanner::utils::LogLevel;
+using eip_scanner::ParameterObject;
+using eip_scanner::utils::Buffer;
 
 const CipUint MAX_INSTANCE = 2;
 const CipUint CLASS_DESCRIPTOR = 8;

@@ -11,7 +11,7 @@
 
 #include "eip_scanner/cip/Types.h"
 
-namespace eipScanner {
+namespace eip_scanner {
 namespace cip {
 	class EPath {
 	public:

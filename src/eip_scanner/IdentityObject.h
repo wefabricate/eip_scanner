@@ -12,7 +12,7 @@
 #include "eip_scanner/MessageRouter.h"
 #include "eip_scanner/BaseObject.h"
 
-namespace eipScanner {
+namespace eip_scanner {
 	/**
 	* @class IdentityObject
 	*

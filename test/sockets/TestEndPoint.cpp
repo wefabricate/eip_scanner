@@ -5,7 +5,7 @@
 #include <gtest/gtest.h>
 #include "eip_scanner/sockets/EndPoint.h"
 
-using eipScanner::sockets::EndPoint;
+using eip_scanner::sockets::EndPoint;
 
 TEST(TestEndPoint, ShouldConvertIpAndHostToAddr) {
 	EndPoint endPoint("127.0.0.1", 0xAA00);

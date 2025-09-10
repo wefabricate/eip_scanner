@@ -9,9 +9,9 @@
 #include "eip_scanner/fileObject/FileObjectLoadedState.h"
 #include "eip_scanner/utils/Buffer.h"
 
-using namespace eipScanner;
-using eipScanner::fileObject::FileObjectLoadedState;
-using eipScanner::fileObject::FILE_OBJECT_CLASS_ID;
+using namespace eip_scanner;
+using eip_scanner::fileObject::FileObjectLoadedState;
+using eip_scanner::fileObject::FILE_OBJECT_CLASS_ID;
 using utils::Buffer;
 
 using ::testing::Return;

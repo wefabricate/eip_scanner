@@ -8,8 +8,8 @@ prints the messages into stdout. This is a simple usage example:
 
     #include "utils/Logger.h"
 
-    using eipScanner::utils::Logger;
-    using eipScanner::utils::LogLevel;
+    using eip_scanner::utils::Logger;
+    using eip_scanner::utils::LogLevel;
 
     int main() {
         Logger::setLogLevel(LogLevel::INFO);

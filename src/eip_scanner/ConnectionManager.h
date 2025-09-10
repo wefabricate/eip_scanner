@@ -14,7 +14,7 @@
 #include "eip_scanner/sockets/UDPBoundSocket.h"
 #include <mutex>
 
-namespace eipScanner {
+namespace eip_scanner {
 	/**
 	* @class ConnectionManager
 	*

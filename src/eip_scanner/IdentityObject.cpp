@@ -5,7 +5,7 @@
 #include "eip_scanner/IdentityObject.h"
 #include "eip_scanner/utils/Buffer.h"
 
-namespace eipScanner {
+namespace eip_scanner {
 	using namespace cip;
 	using utils::Buffer;
 

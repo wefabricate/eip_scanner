@@ -9,7 +9,7 @@
 #include "eip_scanner/eip/EncapsPacket.h"
 #include "eip_scanner/sockets/EndPoint.h"
 
-namespace eipScanner {
+namespace eip_scanner {
 	/**
 	* @class SessionInfoIf
 	*

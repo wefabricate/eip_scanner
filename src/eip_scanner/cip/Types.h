@@ -7,7 +7,7 @@
 
 #include <cstdint>
 
-namespace eipScanner {
+namespace eip_scanner {
 namespace cip {
 	typedef uint8_t CipOctet; /**< 8 bit value that indicates particular data type */
 	typedef uint8_t CipBool; /**< Boolean data type */

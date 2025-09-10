@@ -5,7 +5,7 @@
 #include "eip_scanner/utils/Buffer.h"
 #include "eip_scanner/cip/EPath.h"
 
-namespace eipScanner {
+namespace eip_scanner {
 namespace cip {
 	using utils::Buffer;
 

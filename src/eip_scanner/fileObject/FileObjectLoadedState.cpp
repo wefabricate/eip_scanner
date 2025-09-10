@@ -6,7 +6,7 @@
 #include "eip_scanner/fileObject/FileObjectUploadInProgressState.h"
 #include "eip_scanner/utils/Buffer.h"
 
-namespace eipScanner {
+namespace eip_scanner {
 namespace fileObject {
 	using utils::Buffer;
 	using utils::LogLevel;

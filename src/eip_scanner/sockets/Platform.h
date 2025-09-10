@@ -11,7 +11,7 @@
 
 #define EIPSCANNER_SOCKET_ERROR(err) WSA##err
 
-namespace eipScanner {
+namespace eip_scanner {
 namespace sockets {
   class win32ErrorCategory : public std::error_category {
     public:

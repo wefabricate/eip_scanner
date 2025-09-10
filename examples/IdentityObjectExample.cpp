@@ -10,10 +10,10 @@
 #include <eip_scanner/IdentityObject.h>
 #include <eip_scanner/utils/Logger.h>
 
-using eipScanner::IdentityObject;
-using eipScanner::SessionInfo;
-using eipScanner::utils::Logger;
-using eipScanner::utils::LogLevel;
+using eip_scanner::IdentityObject;
+using eip_scanner::SessionInfo;
+using eip_scanner::utils::Logger;
+using eip_scanner::utils::LogLevel;
 
 int main() {
   Logger::setLogLevel(LogLevel::DEBUG);

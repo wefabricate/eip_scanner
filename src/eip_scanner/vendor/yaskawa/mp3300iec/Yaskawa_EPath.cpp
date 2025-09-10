@@ -2,7 +2,7 @@
 #include "eip_scanner/utils/Buffer.h"
 #include "eip_scanner/vendor/yaskawa/mp3300iec/Yaskawa_EPath.h"
 
-namespace eipScanner {
+namespace eip_scanner {
 namespace cip {
 	using utils::Buffer;
 

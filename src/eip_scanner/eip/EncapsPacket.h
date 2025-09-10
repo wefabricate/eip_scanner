@@ -11,7 +11,7 @@
 
 #include "eip_scanner/cip/Types.h"
 
-namespace eipScanner {
+namespace eip_scanner {
 namespace eip {
 	enum class EncapsCommands : cip::CipUint {
 		NOP = 0,

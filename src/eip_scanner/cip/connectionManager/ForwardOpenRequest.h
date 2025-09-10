@@ -8,7 +8,7 @@
 #include <vector>
 #include "eip_scanner/cip/connectionManager/ConnectionParameters.h"
 
-namespace eipScanner {
+namespace eip_scanner {
 namespace cip {
 namespace connectionManager {
 	class ForwardOpenRequest {

@@ -12,7 +12,7 @@
 #include "eip_scanner/cip/GeneralStatusCodes.h"
 #include "eip_scanner/utils/Logger.h"
 
-namespace eipScanner {
+namespace eip_scanner {
 namespace fileObject {
 	const cip::CipUsint FILE_OBJECT_CLASS_ID = 0x37;
 	const cip::CipUsint MAX_TRANSFER_SIZE = 255;

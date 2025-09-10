@@ -9,7 +9,7 @@
 #include "eip_scanner/utils/Buffer.h"
 #include "eip_scanner/utils/Logger.h"
 
-namespace eipScanner {
+namespace eip_scanner {
 	using utils::Logger;
 	using utils::LogLevel;
 	using utils::Buffer;

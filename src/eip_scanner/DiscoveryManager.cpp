@@ -11,7 +11,7 @@
 
 #include "eip_scanner/DiscoveryManager.h"
 
-namespace eipScanner {
+namespace eip_scanner {
 	using namespace cip;
 
 	using eip::EncapsPacketFactory;
@@ -35,7 +35,7 @@ namespace eipScanner {
 	DiscoveryManager::~DiscoveryManager() = default;
 
 	IdentityItem::Vec DiscoveryManager::discover() const {
-		eipScanner::IdentityItem::Vec devices;
+		eip_scanner::IdentityItem::Vec devices;
 
 		auto socket = makeSocket();
 		socket->Send(EncapsPacketFactory().createListIdentityPacket().pack());

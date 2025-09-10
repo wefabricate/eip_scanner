@@ -16,10 +16,10 @@
 #include "eip_scanner/sockets/UDPSocket.h"
 #include "eip_scanner/sockets/Platform.h"
 
-namespace eipScanner {
+namespace eip_scanner {
 namespace sockets {
-	using eipScanner::utils::Logger;
-	using eipScanner::utils::LogLevel;
+	using eip_scanner::utils::Logger;
+	using eip_scanner::utils::LogLevel;
 
 	UDPSocket::UDPSocket(std::string host, int port)
 		: UDPSocket(EndPoint(host, port)){

@@ -9,7 +9,7 @@
 #include <chrono>
 #include "eip_scanner/sockets/BaseSocket.h"
 
-namespace eipScanner {
+namespace eip_scanner {
 namespace sockets {
 	class TCPSocket : public BaseSocket {
 	public:

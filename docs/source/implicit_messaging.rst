@@ -20,15 +20,15 @@ to handle the received data from the adapter and send the our data to it.
    #include "utils/Logger.h"
    #include "utils/Buffer.h"
 
-   using namespace eipScanner::cip;
-   using eipScanner::SessionInfo;
-   using eipScanner::MessageRouter;
-   using eipScanner::ConnectionManager;
-   using eipScanner::cip::connectionManager::ConnectionParameters;
-   using eipScanner::cip::connectionManager::NetworkConnectionParams;
-   using eipScanner::utils::Buffer;
-   using eipScanner::utils::Logger;
-   using eipScanner::utils::LogLevel;
+   using namespace eip_scanner::cip;
+   using eip_scanner::SessionInfo;
+   using eip_scanner::MessageRouter;
+   using eip_scanner::ConnectionManager;
+   using eip_scanner::cip::connectionManager::ConnectionParameters;
+   using eip_scanner::cip::connectionManager::NetworkConnectionParams;
+   using eip_scanner::utils::Buffer;
+   using eip_scanner::utils::Logger;
+   using eip_scanner::utils::LogLevel;
 
    int main() {
            Logger::setLogLevel(LogLevel::DEBUG);

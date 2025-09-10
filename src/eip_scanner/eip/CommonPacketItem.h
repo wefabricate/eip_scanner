@@ -10,7 +10,7 @@
 
 #include "eip_scanner/cip/Types.h"
 
-namespace eipScanner {
+namespace eip_scanner {
 namespace eip {
 	enum class CommonPacketItemIds : cip::CipUint {
 		NULL_ADDR = 0x0000,

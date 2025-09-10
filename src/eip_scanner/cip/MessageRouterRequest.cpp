@@ -7,7 +7,7 @@
 #include "eip_scanner/cip/MessageRouterRequest.h"
 #include "eip_scanner/cip/EPath.h"
 
-namespace eipScanner {
+namespace eip_scanner {
 namespace cip {
 	using utils::Buffer;
 

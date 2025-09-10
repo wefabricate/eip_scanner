@@ -15,7 +15,7 @@
 #define EIP_DEFAULT_EXPLICIT_PORT (uint16_t)(44818)
 #define EIP_DEFAULT_IMPLICIT_PORT (uint16_t)(2222)
 
-namespace eipScanner {
+namespace eip_scanner {
 namespace sockets {
 
 	class EndPoint {

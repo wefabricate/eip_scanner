@@ -11,7 +11,7 @@
 //#include <netinet/in.h>
 #include "eip_scanner/sockets/UDPSocket.h"
 
-namespace eipScanner {
+namespace eip_scanner {
 namespace sockets {
 
 	class UDPBoundSocket : public UDPSocket {

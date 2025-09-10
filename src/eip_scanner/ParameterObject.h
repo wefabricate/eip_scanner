@@ -11,7 +11,7 @@
 #include "eip_scanner/utils/Buffer.h"
 #include "eip_scanner/BaseObject.h"
 
-namespace eipScanner {
+namespace eip_scanner {
 
  /**
  * @class ParameterObject

@@ -9,7 +9,7 @@
 #include "eip_scanner/sockets/UDPBoundSocket.h"
 #include "eip_scanner/sockets/Platform.h"
 
-namespace eipScanner {
+namespace eip_scanner {
 namespace sockets {
 
 

@@ -5,7 +5,7 @@
 #include <gtest/gtest.h>
 #include "eip_scanner/cip/CipRevision.h"
 
-using eipScanner::cip::CipRevision;
+using eip_scanner::cip::CipRevision;
 
 TEST(TestCipRevision, ShouldHaveConstructors) {
 	CipRevision revision;

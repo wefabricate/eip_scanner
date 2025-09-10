@@ -11,8 +11,8 @@ upon construction:
     #include "MessageRouter.h"
     #include "ConnectionManager.h"
 
-    using eipScanner::ConnectionManager;
-    using eipScanner::MessageRouter;
+    using eip_scanner::ConnectionManager;
+    using eip_scanner::MessageRouter;
 
     int main()
     {

@@ -5,8 +5,8 @@
 #include "eip_scanner/eip/EncapsPacketFactory.h"
 #include "eip_scanner/eip/EncapsPacket.h"
 
-using eipScanner::eip::EncapsPacket;
-using eipScanner::eip::EncapsPacketFactory;
+using eip_scanner::eip::EncapsPacket;
+using eip_scanner::eip::EncapsPacketFactory;
 
 TEST(TestEncapsPacketFactory, ShouldCreateRegisterSessionPacket) {
 	std::vector<uint8_t> expectedPacket = {0x65, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,

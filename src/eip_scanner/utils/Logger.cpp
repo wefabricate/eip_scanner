@@ -6,7 +6,7 @@
 
 #include "eip_scanner/utils/Logger.h"
 
-namespace eipScanner {
+namespace eip_scanner {
 namespace utils {
 	LogLevel Logger::_globalLogLevel = LogLevel::INFO;
 	LogAppenderIf::UPtr Logger::_appender = std::make_unique<ConsoleAppender>();

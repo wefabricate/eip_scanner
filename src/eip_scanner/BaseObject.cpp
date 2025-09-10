@@ -4,7 +4,7 @@
 
 #include "BaseObject.h"
 
-namespace eipScanner {
+namespace eip_scanner {
 
 	BaseObject::BaseObject(cip::CipUint classId, cip::CipUint instanceId)
 		: _classId(classId)

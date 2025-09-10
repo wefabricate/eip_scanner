@@ -11,7 +11,7 @@
 #include "eip_scanner/cip/Types.h"
 #include "eip_scanner/sockets/UDPSocket.h"
 
-namespace eipScanner {
+namespace eip_scanner {
 	class ConnectionManager;
 
 	/**
@@ -19,7 +19,7 @@ namespace eipScanner {
 	 *
 	 * @brief Implements an implicit EIP connection
 	 *
-	 * @sa eipScanner::ConnectionManager
+	 * @sa eip_scanner::ConnectionManager
 	 */
 	class IOConnection {
 		friend class ConnectionManager;

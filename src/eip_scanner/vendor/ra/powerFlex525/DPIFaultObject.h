@@ -12,7 +12,7 @@
 #include "eip_scanner/SessionInfoIf.h"
 #include "eip_scanner/MessageRouter.h"
 
-namespace eipScanner {
+namespace eip_scanner {
 namespace vendor {
 namespace ra {
 namespace powerFlex525 {

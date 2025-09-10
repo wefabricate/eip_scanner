@@ -16,7 +16,7 @@
 #include <system_error>
 #include <utility>
 
-namespace eipScanner {
+namespace eip_scanner {
 namespace sockets {
 
 	EndPoint::EndPoint(struct sockaddr_in &addr)

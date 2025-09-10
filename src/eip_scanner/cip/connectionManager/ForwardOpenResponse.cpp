@@ -5,7 +5,7 @@
 #include "eip_scanner/cip/connectionManager/ForwardOpenResponse.h"
 #include "eip_scanner/utils/Buffer.h"
 
-namespace eipScanner {
+namespace eip_scanner {
 namespace cip {
 namespace connectionManager {
 

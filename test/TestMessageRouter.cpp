@@ -12,7 +12,7 @@
 #include "eip_scanner/cip/MessageRouterRequest.h"
 #include "eip_scanner/cip/MessageRouterResponse.h"
 
-using namespace eipScanner;
+using namespace eip_scanner;
 
 TEST(TestMessageRouter, ShouldFormAndParseCommonPackets) {
 	auto mockSession = std::make_shared<TMockSessionInfo>();

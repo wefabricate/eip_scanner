@@ -7,9 +7,9 @@
 #include "eip_scanner/eip/EncapsPacket.h"
 #include "eip_scanner/utils/Buffer.h"
 
-using eipScanner::utils::Buffer;
+using eip_scanner::utils::Buffer;
 
-namespace eipScanner {
+namespace eip_scanner {
 namespace eip {
 
 	EncapsPacket::EncapsPacket() : _command{EncapsCommands::NOP}

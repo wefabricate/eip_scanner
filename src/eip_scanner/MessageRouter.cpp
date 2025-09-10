@@ -13,7 +13,7 @@
 #include "eip_scanner/utils/Buffer.h"
 #include "eip_scanner/utils/Logger.h"
 
-namespace eipScanner {
+namespace eip_scanner {
 	using namespace cip;
 	using namespace utils;
 	using eip::CommonPacketItemFactory;

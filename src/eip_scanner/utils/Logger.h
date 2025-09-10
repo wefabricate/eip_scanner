@@ -12,7 +12,7 @@
 #undef ERROR
 #endif
 
-namespace eipScanner {
+namespace eip_scanner {
 namespace utils {
 
 	enum class LogLevel {

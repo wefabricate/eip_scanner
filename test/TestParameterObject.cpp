@@ -6,7 +6,7 @@
 #include "Mocks.h"
 #include "eip_scanner/ParameterObject.h"
 
-using namespace eipScanner;
+using namespace eip_scanner;
 using ::testing::Return;
 
 class TestParameterObject : public ::testing::Test {

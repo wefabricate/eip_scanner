@@ -5,7 +5,7 @@
 #include "eip_scanner/vendor/ra/powerFlex525/DPIFaultCode.h"
 
 
-namespace eipScanner {
+namespace eip_scanner {
 namespace vendor {
 namespace ra {
 namespace powerFlex525 {

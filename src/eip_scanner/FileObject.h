@@ -12,7 +12,7 @@
 #include "eip_scanner/MessageRouter.h"
 #include "eip_scanner/BaseObject.h"
 
-namespace eipScanner {
+namespace eip_scanner {
 	namespace fileObject {
 		class FileObjectState;
 		using EndUploadHandler = std::function<void(cip::GeneralStatusCodes status, const std::vector<uint8_t>& fileContent)>;

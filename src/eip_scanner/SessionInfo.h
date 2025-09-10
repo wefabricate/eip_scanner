@@ -13,7 +13,7 @@
 #include "eip_scanner/SessionInfoIf.h"
 #include "eip_scanner/sockets/TCPSocket.h"
 
-namespace eipScanner {
+namespace eip_scanner {
 	/**
 	* @class SessionInfo
 	*

@@ -17,7 +17,7 @@
 #include "eip_scanner/utils/Logger.h"
 #include "eip_scanner/utils/Buffer.h"
 
-namespace eipScanner {
+namespace eip_scanner {
 	using namespace cip::connectionManager;
 	using namespace utils;
 	using cip::MessageRouterResponse;

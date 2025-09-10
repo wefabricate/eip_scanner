@@ -14,7 +14,7 @@
 #define DISCOVERY_SOCKET_RECEIVE_END_ERROR_CODE (EIPSCANNER_SOCKET_ERROR(ETIMEDOUT))
 #endif
 
-namespace eipScanner {
+namespace eip_scanner {
 
 	/**
 	 * @brief Contains information about EIP device and its address in the network

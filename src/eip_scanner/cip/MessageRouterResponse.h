@@ -13,7 +13,7 @@
 #include "eip_scanner/cip/Services.h"
 #include "eip_scanner/eip/CommonPacketItem.h"
 
-namespace eipScanner {
+namespace eip_scanner {
 namespace cip {
 	class MessageRouterResponse {
 	public:

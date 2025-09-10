@@ -6,11 +6,11 @@
 #include "eip_scanner/utils/Buffer.h"
 #include "eip_scanner/utils/Logger.h"
 
-namespace eipScanner {
+namespace eip_scanner {
 	using utils::Buffer;
 	using utils::Logger;
 	using utils::LogLevel;
-	using namespace ::eipScanner::cip;
+	using namespace ::eip_scanner::cip;
 
 	enum ParameterObjectAttributeIds : cip::CipUsint {
 		VALUE = 1,

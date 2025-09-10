@@ -9,7 +9,7 @@
 #include "eip_scanner/eip/CommonPacketItem.h"
 #include "eip_scanner/cip/Types.h"
 
-namespace eipScanner {
+namespace eip_scanner {
 namespace eip {
 	class CommonPacketItemFactory {
 	public:

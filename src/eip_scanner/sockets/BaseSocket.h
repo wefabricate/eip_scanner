@@ -15,7 +15,7 @@
 
 #include "eip_scanner/sockets/EndPoint.h"
 
-namespace eipScanner {
+namespace eip_scanner {
 namespace sockets {
 	class BaseSocket {
 	public:

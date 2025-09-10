@@ -9,10 +9,10 @@
 #include "eip_scanner/fileObject/FileObjectUploadInProgressState.h"
 #include "eip_scanner/utils/Buffer.h"
 
-using namespace eipScanner;
-using eipScanner::fileObject::FileObjectUploadInProgressState;
-using eipScanner::fileObject::FILE_OBJECT_CLASS_ID;
-using eipScanner::fileObject::TransferPacketTypeCodes;
+using namespace eip_scanner;
+using eip_scanner::fileObject::FileObjectUploadInProgressState;
+using eip_scanner::fileObject::FILE_OBJECT_CLASS_ID;
+using eip_scanner::fileObject::TransferPacketTypeCodes;
 using utils::Buffer;
 
 using ::testing::Return;
