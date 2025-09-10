@@ -3,7 +3,7 @@
 //
 
 #include <gtest/gtest.h>
-#include "EIPScanner/sockets/EndPoint.h"
+#include "eip_scanner/sockets/EndPoint.h"
 
 using eipScanner::sockets::EndPoint;
 

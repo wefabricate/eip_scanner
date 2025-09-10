@@ -5,7 +5,7 @@ set(EIPSCANNER_MINOR_VERSION 1)
 set(EIPSCANNER_PATCH_VERSION 0)
 set(EIPSCANNER_FULL_VERSION ${EIPSCANNER_MAJOR_VERSION}.${EIPSCANNER_MINOR_VERSION}.${EIPSCANNER_PATCH_VERSION})
  
-project(EIPScanner VERSION ${EIPSCANNER_FULL_VERSION})
+project(eip_scanner VERSION ${EIPSCANNER_FULL_VERSION})
  
 set(CMAKE_CXX_STANDARD 20)
 option(ENABLE_VENDOR_SRC "Enable vendor source" OFF)
@@ -23,7 +23,7 @@ if (WIN32)
   endif()
 endif()
  
-set(INSTALL_CMAKE_DIR share/EIPScanner/cmake CACHE PATH
+set(INSTALL_CMAKE_DIR share/eip_scanner/cmake CACHE PATH
     "Installation directory for CMake files")
 # ... for the build tree
 set(INSTALL_INCLUDE_DIR include CACHE PATH
@@ -43,19 +43,19 @@ endforeach()
 file(RELATIVE_PATH REL_INCLUDE_DIR "${INSTALL_CMAKE_DIR}"
        "${INSTALL_INCLUDE_DIR}")
 set(CONF_INCLUDE_DIRS "${PROJECT_SOURCE_DIR}" "${PROJECT_BINARY_DIR}")
-configure_file(EIPScannerConfig.cmake.in
-  "${PROJECT_BINARY_DIR}/EIPScannerConfig.cmake" @ONLY)
+configure_file(eip_scannerConfig.cmake.in
+  "${PROJECT_BINARY_DIR}/eip_scannerConfig.cmake" @ONLY)
 # ... for the install tree
-set(CONF_INCLUDE_DIRS "\${EIPScanner_CMAKE_DIR}/${REL_INCLUDE_DIR}")
-configure_file(EIPScannerConfig.cmake.in
-  "${PROJECT_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/EIPScannerConfig.cmake" @ONLY)
+set(CONF_INCLUDE_DIRS "\${eip_scanner_CMAKE_DIR}/${REL_INCLUDE_DIR}")
+configure_file(eip_scannerConfig.cmake.in
+  "${PROJECT_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/eip_scannerConfig.cmake" @ONLY)
 # ... for both
-configure_file(EIPScannerConfigVersion.cmake.in
-  "${PROJECT_BINARY_DIR}/EIPScannerConfigVersion.cmake" @ONLY)
-# Install the EIPScannerConfig.cmake and EIPScannerConfigVersion.cmake
+configure_file(eip_scannerConfigVersion.cmake.in
+  "${PROJECT_BINARY_DIR}/eip_scannerConfigVersion.cmake" @ONLY)
+# Install the eip_scannerConfig.cmake and eip_scannerConfigVersion.cmake
 install(FILES
-  "${PROJECT_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/EIPScannerConfig.cmake"
-  "${PROJECT_BINARY_DIR}/EIPScannerConfigVersion.cmake"
+  "${PROJECT_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/eip_scannerConfig.cmake"
+  "${PROJECT_BINARY_DIR}/eip_scannerConfigVersion.cmake"
   DESTINATION "${INSTALL_CMAKE_DIR}" COMPONENT dev)
  
 # Setup the include structure so that every file is based off of the root of the project

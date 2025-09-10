@@ -4,7 +4,7 @@
 
 #include <gtest/gtest.h>
 #include "Mocks.h"
-#include "EIPScanner/vendor/ra/powerFlex525/DPIFaultManager.h"
+#include "eip_scanner/vendor/ra/powerFlex525/DPIFaultManager.h"
 
 using namespace eipScanner;
 using namespace eipScanner::vendor::ra::powerFlex525;

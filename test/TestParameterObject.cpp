@@ -4,7 +4,7 @@
 
 #include <gtest/gtest.h>
 #include "Mocks.h"
-#include "EIPScanner/ParameterObject.h"
+#include "eip_scanner/ParameterObject.h"
 
 using namespace eipScanner;
 using ::testing::Return;

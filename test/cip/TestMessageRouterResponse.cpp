@@ -3,7 +3,7 @@
 //
 
 #include <gtest/gtest.h>
-#include "EIPScanner/cip/MessageRouterResponse.h"
+#include "eip_scanner/cip/MessageRouterResponse.h"
 
 using eipScanner::cip::MessageRouterResponse;
 

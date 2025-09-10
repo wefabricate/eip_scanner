@@ -4,8 +4,8 @@
 //
 
 #include <gtest/gtest.h>
-#include "EIPScanner/cip/CipString.h"
-#include "EIPScanner/utils/Buffer.h"
+#include "eip_scanner/cip/CipString.h"
+#include "eip_scanner/utils/Buffer.h"
 
 using eipScanner::cip::CipBaseString;
 using eipScanner::utils::Buffer;

@@ -6,7 +6,7 @@
 
 #include <utility>
 #include "Mocks.h"
-#include "EIPScanner/DiscoveryManager.h"
+#include "eip_scanner/DiscoveryManager.h"
 
 using namespace eipScanner;
 

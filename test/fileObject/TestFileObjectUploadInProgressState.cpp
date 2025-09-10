@@ -5,9 +5,9 @@
 #include <gmock/gmock.h>
 
 #include "FileObjectMocks.h"
-#include "EIPScanner/FileObject.h"
-#include "EIPScanner/fileObject/FileObjectUploadInProgressState.h"
-#include "EIPScanner/utils/Buffer.h"
+#include "eip_scanner/FileObject.h"
+#include "eip_scanner/fileObject/FileObjectUploadInProgressState.h"
+#include "eip_scanner/utils/Buffer.h"
 
 using namespace eipScanner;
 using eipScanner::fileObject::FileObjectUploadInProgressState;

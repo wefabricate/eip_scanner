@@ -48,6 +48,6 @@ target_link_libraries(test_eipscanner
         ${GTEST_BOTH_LIBRARIES}
         ${GMOCK_BOTH_LIBRARIES}
         ${CMAKE_THREAD_LIBS_INIT}
-        EIPScanner)
+        eip_scanner)
 
 add_test(TestEipScanner test_eipscanner)

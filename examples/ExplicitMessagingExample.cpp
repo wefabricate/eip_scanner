@@ -9,12 +9,12 @@
 
 #include <cstdlib>
 #include <sstream>
-#include <EIPScanner/cip/connectionManager/NetworkConnectionParams.h>
-#include <EIPScanner/SessionInfo.h>
-#include <EIPScanner/MessageRouter.h>
-#include <EIPScanner/ConnectionManager.h>
-#include <EIPScanner/utils/Logger.h>
-#include <EIPScanner/utils/Buffer.h>
+#include <eip_scanner/cip/connectionManager/NetworkConnectionParams.h>
+#include <eip_scanner/SessionInfo.h>
+#include <eip_scanner/MessageRouter.h>
+#include <eip_scanner/ConnectionManager.h>
+#include <eip_scanner/utils/Logger.h>
+#include <eip_scanner/utils/Buffer.h>
 
 using namespace eipScanner::cip;
 using eipScanner::SessionInfo;

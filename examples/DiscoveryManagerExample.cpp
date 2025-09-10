@@ -7,8 +7,8 @@
 #define OS_Windows (1)
 #endif
 
-#include <EIPScanner/DiscoveryManager.h>
-#include <EIPScanner/utils/Logger.h>
+#include <eip_scanner/DiscoveryManager.h>
+#include <eip_scanner/utils/Logger.h>
 
 using eipScanner::DiscoveryManager;
 using eipScanner::utils::Logger;

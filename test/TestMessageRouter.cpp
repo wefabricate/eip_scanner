@@ -4,13 +4,13 @@
 
 #include <gtest/gtest.h>
 #include "Mocks.h"
-#include "EIPScanner/MessageRouter.h"
-#include "EIPScanner/eip/CommonPacket.h"
-#include "EIPScanner/eip/CommonPacketItem.h"
-#include "EIPScanner/eip/CommonPacketItemFactory.h"
-#include "EIPScanner/eip/EncapsPacketFactory.h"
-#include "EIPScanner/cip/MessageRouterRequest.h"
-#include "EIPScanner/cip/MessageRouterResponse.h"
+#include "eip_scanner/MessageRouter.h"
+#include "eip_scanner/eip/CommonPacket.h"
+#include "eip_scanner/eip/CommonPacketItem.h"
+#include "eip_scanner/eip/CommonPacketItemFactory.h"
+#include "eip_scanner/eip/EncapsPacketFactory.h"
+#include "eip_scanner/cip/MessageRouterRequest.h"
+#include "eip_scanner/cip/MessageRouterResponse.h"
 
 using namespace eipScanner;
 

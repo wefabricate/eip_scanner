@@ -4,7 +4,7 @@
 <!-- A package.xml in the root of a cmake projects allows it to be built using catkin or colcon (the ROS build system) -->
 
 <package format="2">
-  <name>EIPScanner</name>
+  <name>eip_scanner</name>
   <version>1.3.0</version>
   <description>
     Free implementation of EtherNet/IP in C++

@@ -6,23 +6,23 @@
 #include <functional>
 #include <sstream>
 #include <fstream>
-#include <EIPScanner/cip/connectionManager/NetworkConnectionParams.h>
-#include <EIPScanner/ConnectionManager.h>
-#include <EIPScanner/DiscoveryManager.h>
+#include <eip_scanner/cip/connectionManager/NetworkConnectionParams.h>
+#include <eip_scanner/ConnectionManager.h>
+#include <eip_scanner/DiscoveryManager.h>
 
-#include <EIPScanner/cip/Types.h>
-#include <EIPScanner/FileObject.h>
-#include <EIPScanner/fileObject/FileObjectState.h>
-#include <EIPScanner/IdentityObject.h>
-#include <EIPScanner/IOConnection.h>
-#include <EIPScanner/ParameterObject.h>
-#include <EIPScanner/SessionInfo.h>
-#include <EIPScanner/utils/Logger.h>
-#include <EIPScanner/utils/Buffer.h>
+#include <eip_scanner/cip/Types.h>
+#include <eip_scanner/FileObject.h>
+#include <eip_scanner/fileObject/FileObjectState.h>
+#include <eip_scanner/IdentityObject.h>
+#include <eip_scanner/IOConnection.h>
+#include <eip_scanner/ParameterObject.h>
+#include <eip_scanner/SessionInfo.h>
+#include <eip_scanner/utils/Logger.h>
+#include <eip_scanner/utils/Buffer.h>
 
-#include <EIPScanner/vendor/yaskawa/mp3300iec/Yaskawa_EPath.h>
-#include <EIPScanner/vendor/yaskawa/mp3300iec/Yaskawa_MessageRouter.h>
-#include <EIPScanner/vendor/yaskawa/mp3300iec/Yaskawa_MessageRouterRequest.h>
+#include <eip_scanner/vendor/yaskawa/mp3300iec/Yaskawa_EPath.h>
+#include <eip_scanner/vendor/yaskawa/mp3300iec/Yaskawa_MessageRouter.h>
+#include <eip_scanner/vendor/yaskawa/mp3300iec/Yaskawa_MessageRouterRequest.h>
 
 using namespace eipScanner::cip;
 using eipScanner::ConnectionManager;

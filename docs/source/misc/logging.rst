@@ -1,7 +1,7 @@
 Logging
 =======
 
-**EIPScanner** has a very simple embedded logger *utils::Logger* which
+**eip_scanner** has a very simple embedded logger *utils::Logger* which
 prints the messages into stdout. This is a simple usage example:
 
 .. code-block:: cpp
