@@ -33,41 +33,42 @@ else()
     message(STATUS "LTTng-UST not found, disabling tracing")
 endif()
 
-set(INSTALL_CMAKE_DIR share/eip_scanner/cmake CACHE PATH
-    "Installation directory for CMake files")
-# ... for the build tree
-set(INSTALL_INCLUDE_DIR include CACHE PATH
-      "Installation directory for header files")
-# ... for the build tree
-set(INSTALL_LIB_DIR lib CACHE PATH
-      "Installation directory for header files")
-# Make relative paths absolute (needed later on)
-# foreach(p LIB BIN INCLUDE CMAKE)
-foreach(p LIB INCLUDE CMAKE)
-  set(var INSTALL_${p}_DIR)
-  if(NOT IS_ABSOLUTE "${${var}}")
-    set(${var} "${CMAKE_INSTALL_PREFIX}/${${var}}")
-  endif()
-endforeach()
- 
-file(RELATIVE_PATH REL_INCLUDE_DIR "${INSTALL_CMAKE_DIR}"
-       "${INSTALL_INCLUDE_DIR}")
-set(CONF_INCLUDE_DIRS "${PROJECT_SOURCE_DIR}" "${PROJECT_BINARY_DIR}")
-configure_file(eip_scannerConfig.cmake.in
-  "${PROJECT_BINARY_DIR}/eip_scannerConfig.cmake" @ONLY)
-# ... for the install tree
-set(CONF_INCLUDE_DIRS "\${eip_scanner_CMAKE_DIR}/${REL_INCLUDE_DIR}")
-configure_file(eip_scannerConfig.cmake.in
-  "${PROJECT_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/eip_scannerConfig.cmake" @ONLY)
-# ... for both
-configure_file(eip_scannerConfigVersion.cmake.in
-  "${PROJECT_BINARY_DIR}/eip_scannerConfigVersion.cmake" @ONLY)
-# Install the eip_scannerConfig.cmake and eip_scannerConfigVersion.cmake
+include(GNUInstallDirs)
+
+# Configure and install CMake package files
+include(CMakePackageConfigHelpers)
+
+# Generate the config file that includes the exports
+configure_package_config_file(
+    "${PROJECT_SOURCE_DIR}/cmake/eip_scannerConfig.cmake.in"
+    "${PROJECT_BINARY_DIR}/eip_scannerConfig.cmake"
+    INSTALL_DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/eip_scanner"
+    NO_SET_AND_CHECK_MACRO
+    NO_CHECK_REQUIRED_COMPONENTS_MACRO
+    PATH_VARS CMAKE_INSTALL_INCLUDEDIR
+)
+
+# Generate the version file for the config file
+write_basic_package_version_file(
+    "${PROJECT_BINARY_DIR}/eip_scannerConfigVersion.cmake"
+    VERSION "${PROJECT_VERSION}"
+    COMPATIBILITY SameMinorVersion
+)
+
+# Install the configuration files
 install(FILES
-  "${PROJECT_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/eip_scannerConfig.cmake"
-  "${PROJECT_BINARY_DIR}/eip_scannerConfigVersion.cmake"
-  DESTINATION "${INSTALL_CMAKE_DIR}" COMPONENT dev)
- 
+    "${PROJECT_BINARY_DIR}/eip_scannerConfig.cmake"
+    "${PROJECT_BINARY_DIR}/eip_scannerConfigVersion.cmake"
+    DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/eip_scanner"
+)
+
+# Install the export set for use with the install-tree
+install(EXPORT eip_scannerTargets
+    FILE eip_scannerTargets.cmake
+    NAMESPACE eip_scanner::
+    DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/eip_scanner"
+)
+
 # Setup the include structure so that every file is based off of the root of the project
 include_directories(src)
  
@@ -75,23 +76,9 @@ include_directories(src)
 add_subdirectory(src/${CMAKE_PROJECT_NAME})
  
 if (EXAMPLE_ENABLED)
-  set(EXAMPLES_DIR ${CMAKE_CURRENT_SOURCE_DIR}/examples)
- 
-  # Create the build directory if it doesn't exist
-  file(MAKE_DIRECTORY ${EXAMPLES_DIR}/build)
- 
-  # Run the other CMakeLists.txt file without any dependencies on this file
-  execute_process(COMMAND ${CMAKE_COMMAND} ${EXAMPLES_DIR} WORKING_DIRECTORY ${EXAMPLES_DIR}/build)
- 
-  # Execute code during a `cmake --build` command
-  add_custom_target(EXAMPLES_TARGETS ALL COMMAND ${CMAKE_COMMAND} --build ${EXAMPLES_DIR}/build WORKING_DIRECTORY ${EXAMPLES_DIR}/build COMMENT "Building the examples sub-project")
+  add_subdirectory(examples)
 endif()
  
 if (TEST_ENABLED)
     add_subdirectory(test)
-endif()
- 
-include(GNUInstallDirs)
-install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/package.xml
-  DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/${PROJECT_NAME})
- 
+endif() 

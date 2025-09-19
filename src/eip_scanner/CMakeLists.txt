@@ -56,14 +56,26 @@ endif()
 
 add_library(eip_scanner ${LIB_SOURCE_FILES} ${VENDOR_FILES})
 
-if (WIN32)
-    target_link_libraries(eip_scanner ws2_32)
-endif()
-
 if(LTTNG_FOUND)
     target_link_libraries(eip_scanner PUBLIC lttng-ust dl)
     target_compile_definitions(eip_scanner PUBLIC -DLTTNG_ENABLED)
 endif()
+
+# Add Windows-specific DLL configurations
+if(WIN32)
+    target_link_libraries(eip_scanner PRIVATE ws2_32)
+    
+    # Set proper Windows DLL properties
+    if(BUILD_SHARED_LIBS)
+        set_target_properties(eip_scanner PROPERTIES
+            WINDOWS_EXPORT_ALL_SYMBOLS ON
+            VERSION ${EIPSCANNER_FULL_VERSION}
+            SOVERSION ${EIPSCANNER_MAJOR_VERSION}
+            DEBUG_POSTFIX "d"
+        )
+    endif()
+endif()
+
 
 set_target_properties(
         eip_scanner
@@ -71,12 +83,15 @@ set_target_properties(
         VERSION ${EIPSCANNER_FULL_VERSION}
         SOVERSION ${EIPSCANNER_MAJOR_VERSION})
 
+# Install the target with proper export
 install(TARGETS eip_scanner
-        LIBRARY
-            DESTINATION "${INSTALL_LIB_DIR}"
-        ARCHIVE
-            DESTINATION "${INSTALL_LIB_DIR}")
+    EXPORT eip_scannerTargets
+    RUNTIME DESTINATION "${CMAKE_INSTALL_BINDIR}"
+    LIBRARY DESTINATION "${CMAKE_INSTALL_LIBDIR}"
+    ARCHIVE DESTINATION "${CMAKE_INSTALL_LIBDIR}"
+    INCLUDES DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}"
+)
 
 install(DIRECTORY "${PROJECT_SOURCE_DIR}/src/"
-        DESTINATION "${INSTALL_INCLUDE_DIR}"
+        DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}"
         FILES_MATCHING PATTERN "*.h*")

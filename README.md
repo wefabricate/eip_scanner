@@ -9,7 +9,7 @@ Fork of https://github.com/nimbuscontrols/EIPScanner. Changes include:
 * namespace eipScanner -> eip_scanner
 * headers installed into `eip_scanner` folder (https://github.com/nimbuscontrols/EIPScanner/pull/115)
 * building libraries static/shared toggle now done in standard Cmake way
-* cmake discoverable (https://github.com/nimbuscontrols/EIPScanner/pull/88)
+* modern cmake discoverable
 * Fix timing particularly around receiving messages. NOTE: It is not recommended to use a long receive timeout as there is a good chance it will use it, particularly in multi connection scenarios.
 * Add ltt-ng tracepoints
 * Default disable vendor source build
