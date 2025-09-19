@@ -1,11 +1,21 @@
 # eip_scanner
 
-[![Build Status](https://travis-ci.com/nimbuscontrols/eip_scanner.svg?branch=master)](https://travis-ci.com/nimbuscontrols/eip_scanner)
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/nimbuscontrols/eip_scanner)
-
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/wefabricate/eip_scanner)
 
 Free implementation of Ethernet/IP scanner in C++.
 
+Fork of https://github.com/nimbuscontrols/EIPScanner. Changes include:
+* Naming EIPScanner -> eip_scanner
+* namespace eipScanner -> eip_scanner
+* headers installed into `eip_scanner` folder (https://github.com/nimbuscontrols/EIPScanner/pull/115)
+* building libraries static/shared toggle now done in standard Cmake way
+* cmake discoverable (https://github.com/nimbuscontrols/EIPScanner/pull/88)
+* Fix timing particularly around receiving messages. NOTE: It is not recommended to use a long receive timeout as there is a good chance it will use it, particularly in multi connection scenarios.
+* Add ltt-ng tracepoints
+* Default disable vendor source build
+* Other fixes:
+  * https://github.com/nimbuscontrols/EIPScanner/pull/112
+  * https://github.com/ambi-robotics/EIPScanner/pull/4
 
 ## Features
 
