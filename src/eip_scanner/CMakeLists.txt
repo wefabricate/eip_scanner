@@ -1,17 +1,6 @@
 include_directories(${CMAKE_CURRENT_LIST_DIR})
 
-# Add LTTng-UST check
-option(ENABLE_LTTNG "Enable LTTng-UST tracing support if available" ON)
-find_library(LTTNG_LIBRARY NAMES lttng-ust)
-if(LTTNG_LIBRARY AND ENABLE_LTTNG)
-    set(LTTNG_FOUND TRUE)
-    message(STATUS "LTTng-UST found, enabling tracing")
-else()
-    message(STATUS "LTTng-UST not found, disabling tracing")
-endif()
-
-
-set(SOURCE_FILES
+set(LIB_SOURCE_FILES
         cip/connectionManager/ForwardCloseRequest.cpp
         cip/connectionManager/ForwardOpenRequest.cpp
         cip/connectionManager/LargeForwardOpenRequest.cpp
@@ -62,25 +51,18 @@ if(ENABLE_VENDOR_SRC)
 endif()
 
 if(LTTNG_FOUND)
-    list(APPEND SOURCE_FILES tracing/eip_tracepoint.c)
+    list(APPEND LIB_SOURCE_FILES tracing/eip_tracepoint.c)
 endif()
 
-add_library(eip_scanner ${SOURCE_FILES} ${VENDOR_FILES})
+add_library(eip_scanner ${LIB_SOURCE_FILES} ${VENDOR_FILES})
 
 if (WIN32)
-    list(APPEND LIBRARY_DEPENDENCIES ws2_32)
-    if (BUILD_SHARED_LIBS)
-        set_target_properties(eip_scanner PROPERTIES OUTPUT_NAME "eip_scanner")
-    endif()
+    target_link_libraries(eip_scanner ws2_32)
 endif()
 
 if(LTTNG_FOUND)
-    list(APPEND LIBRARY_DEPENDENCIES lttng-ust)
-    target_compile_definitions(eip_scanner PRIVATE -DLTTNG_ENABLED)
-endif()
-
-if (${LIBRARY_DEPENDENCIES})
-    target_link_libraries(eip_scanner ${LIBRARY_DEPENDENCIES})
+    target_link_libraries(eip_scanner PUBLIC lttng-ust dl)
+    target_compile_definitions(eip_scanner PUBLIC -DLTTNG_ENABLED)
 endif()
 
 set_target_properties(

@@ -23,6 +23,16 @@ if (WIN32)
   endif()
 endif()
  
+# Add LTTng-UST check
+option(ENABLE_LTTNG "Enable LTTng-UST tracing support if available" ON)
+find_library(LTTNG_LIBRARY NAMES lttng-ust)
+if(LTTNG_LIBRARY AND ENABLE_LTTNG)
+    set(LTTNG_FOUND TRUE)
+    message(STATUS "LTTng-UST found, enabling tracing")
+else()
+    message(STATUS "LTTng-UST not found, disabling tracing")
+endif()
+
 set(INSTALL_CMAKE_DIR share/eip_scanner/cmake CACHE PATH
     "Installation directory for CMake files")
 # ... for the build tree

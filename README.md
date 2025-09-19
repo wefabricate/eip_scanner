@@ -51,16 +51,23 @@ $ cmake ..
 $ cmake --build . --target install
 ```
 
-OR
-
+Or in a virtual environment
 ```shell
-$ pixi run build
+$ pixi run build # OR
+$ pixi run build-shared
 $ pixi run install
 ```
 
 ## Usage
 
 To see how to work with the library, look into `examples` directory 
+
+```shell
+$ pixi run build-shared
+$ pixi run install
+$ pixi run build-tests-examples
+$ pixi run test
+```
 
 ## Contribution
 
