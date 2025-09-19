@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required(VERSION 3.16)
  
 set(EIPSCANNER_MAJOR_VERSION 2)
 set(EIPSCANNER_MINOR_VERSION 0)

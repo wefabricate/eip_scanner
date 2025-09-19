@@ -35,9 +35,13 @@ Vendor specific objects:
 
 ## Requirements
 
-* CMake 3.5 and higher
+* CMake 3.16 and higher
 * C++20 compiler (tested with GCC and MinGW)
 * Linux, MacOS, and Windows
+
+OR
+
+* pixi - https://pixi.sh/ to handle all dependencies
 
 ## Installing
 
@@ -45,6 +49,13 @@ Vendor specific objects:
 $ mkdir build && cd build
 $ cmake ..
 $ cmake --build . --target install
+```
+
+OR
+
+```shell
+$ pixi run build
+$ pixi run install
 ```
 
 ## Usage
