@@ -128,6 +128,14 @@ namespace eip_scanner {
 			ioConnection->_t2oDataSize = t2oSize;
 			ioConnection->_o2tFixedSize = (o2tNCP.getType() == NetworkConnectionParametersBuilder::FIXED);
 			ioConnection->_t2oFixedSize = (t2oNCP.getType() == NetworkConnectionParametersBuilder::FIXED);
+			lttng_ust_tracepoint(eip_scanner, new_connection,
+					response.getConnectionSerialNumber(),
+					connectionParameters.originatorVendorId,
+					connectionParameters.connectionPath.data(),
+					connectionParameters.connectionPath.size(),
+					response.getO2TNetworkConnectionId(),
+					response.getT2ONetworkConnectionId()
+			);
 
 			const eip::CommonPacketItem::Vec &additionalItems = messageRouterResponse.getAdditionalPacketItems();
 			auto o2tSockAddrInfo = std::find_if(additionalItems.begin(), additionalItems.end(),
@@ -187,6 +195,10 @@ namespace eip_scanner {
 
 			Logger(LogLevel::INFO) << "Close connection connection T2O_ID="
 					<< ptr->_t2oNetworkConnectionId;
+					
+			lttng_ust_tracepoint(eip_scanner, close_connection,
+					ptr->_o2tNetworkConnectionId,
+					ptr->_t2oNetworkConnectionId);
 
 			auto messageRouterResponse = _messageRouter->sendRequest(si,
 					static_cast<cip::CipUsint>(ConnectionManagerServiceCodes::FORWARD_CLOSE),

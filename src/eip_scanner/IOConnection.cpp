@@ -89,10 +89,10 @@ namespace eip_scanner {
 				<< " bytes were received. Ignore this data.";
 		} else {
 			_connectionTimeoutCount = 0;
-			lttng_ust_tracepoint(eip_scanner, span_start, "process_receive", 40 + _t2oNetworkConnectionId);
+			lttng_ust_tracepoint(eip_scanner, span_start, "process_receive", _t2oNetworkConnectionId);
 			_receiveDataHandle(runtimeHeader, sequenceValueCount,
 							   ioData);
-			lttng_ust_tracepoint(eip_scanner, span_stop, 40 + _t2oNetworkConnectionId);
+			lttng_ust_tracepoint(eip_scanner, span_stop, _t2oNetworkConnectionId);
 		}
 	}
 
@@ -133,9 +133,9 @@ namespace eip_scanner {
 			}
 
 			_o2tTimer = 0;
-			lttng_ust_tracepoint(eip_scanner, span_start, "process_send", 30 + _o2tNetworkConnectionId);
+			lttng_ust_tracepoint(eip_scanner, span_start, "process_send", _o2tNetworkConnectionId);
 			_sendDataHandle(_outputData);
-			lttng_ust_tracepoint(eip_scanner, span_stop, 30 + _o2tNetworkConnectionId);
+			lttng_ust_tracepoint(eip_scanner, span_stop, _o2tNetworkConnectionId);
 			if (_o2tFixedSize && _outputData.size() != _o2tDataSize)  {
 				Logger(LogLevel::WARNING) << "Connection O2T_ID=" << _o2tNetworkConnectionId
 										  << " has fixed size " << _o2tDataSize << " bytes but " << _outputData.size()

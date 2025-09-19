@@ -1,4 +1,4 @@
-#ifndef __linux__
+#ifndef LTTNG_ENABLED
 
 #ifndef _EIP_TRACEPOINT_H
 #define _EIP_TRACEPOINT_H
@@ -47,13 +47,46 @@ LTTNG_UST_TRACEPOINT_EVENT(
     transmission_event,
     LTTNG_UST_TP_ARGS(
         const char*, event_name,
-        long, seq_id,
-        long, connection_id
+        unsigned long, seq_id,
+        unsigned long, connection_id
     ),
     LTTNG_UST_TP_FIELDS(
         lttng_ust_field_string(event_name_field, event_name)
-        lttng_ust_field_integer(long, seq_id_field, seq_id)
-        lttng_ust_field_integer(long, connection_id_field, connection_id)
+        lttng_ust_field_integer(unsigned long, seq_id_field, seq_id)
+        lttng_ust_field_integer(unsigned long, connection_id_field, connection_id)
+    )
+)
+
+LTTNG_UST_TRACEPOINT_EVENT(
+    eip_scanner,
+    new_connection,
+    LTTNG_UST_TP_ARGS(
+        unsigned int, serial_number,
+        unsigned int, vendor_id,
+        uint8_t*, connection_path,
+        size_t, connection_path_length,
+        unsigned long, o2t_connection_id,
+        unsigned long, t2o_connection_id
+    ),
+    LTTNG_UST_TP_FIELDS(
+        lttng_ust_field_integer(unsigned int, serial_number_field, serial_number)
+        lttng_ust_field_integer(unsigned int, vendor_id_field, vendor_id)
+        lttng_ust_field_sequence_hex(uint8_t, connection_path_field, connection_path, size_t, connection_path_length)
+        lttng_ust_field_integer(unsigned long, o2t_connection_id_field, o2t_connection_id)
+        lttng_ust_field_integer(unsigned long, t2o_connection_id_field, t2o_connection_id)
+    )
+)
+
+LTTNG_UST_TRACEPOINT_EVENT(
+    eip_scanner,
+    close_connection,
+    LTTNG_UST_TP_ARGS(
+        unsigned long, o2t_connection_id,
+        unsigned long, t2o_connection_id
+    ),
+    LTTNG_UST_TP_FIELDS(
+        lttng_ust_field_integer(unsigned long, o2t_connection_id_field, o2t_connection_id)
+        lttng_ust_field_integer(unsigned long, t2o_connection_id_field, t2o_connection_id)
     )
 )
 
