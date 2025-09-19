@@ -52,12 +52,6 @@ First of all, we should create *CMakeLists.txt* with the following content:
    include_directories(/usr/local/include/eip_scanner)
    target_link_libraries(hi_eip eip_scanner)
 
-
-Pay attention to the last two lines. Currently, **eip_scanner** doesn't provide a cmake module to help to find
-the library on your machine and we have to do all manually. First, we point on the include directory whose path
-should be `path/were/eipscanner/is/installed/` + `eip_scanner`. Second, we link our executable file with the library 
-`eip_scanner`. If you'd like to use the static library instead, use `eip_scannerS` name.
-
 Okay, we have *CMakeLists.txt*. Now we should create *main.cpp* and place there this code:
 
 .. code-block:: cpp

@@ -6,4 +6,3 @@ set(SOURCE_FILES
         ${CMAKE_CURRENT_LIST_DIR}/FileObjectUploadInProgressState.cpp)
         
 target_sources(eip_scanner PUBLIC ${SOURCE_FILES})
-target_sources(eip_scannerS PUBLIC ${SOURCE_FILES})

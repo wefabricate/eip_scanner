@@ -66,7 +66,6 @@ if(LTTNG_FOUND)
 endif()
 
 add_library(eip_scanner ${SOURCE_FILES} ${VENDOR_FILES})
-# add_library(eip_scannerS STATIC ${SOURCE_FILES} ${VENDOR_FILES})
 
 if (WIN32)
     list(APPEND LIBRARY_DEPENDENCIES ws2_32)

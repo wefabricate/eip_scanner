@@ -7,6 +7,5 @@ set(SOURCE_FILES
 
 
 target_sources(eip_scanner PUBLIC ${SOURCE_FILES})
-target_sources(eip_scannerS PUBLIC ${SOURCE_FILES})
 
 add_subdirectory(connectionManager)
