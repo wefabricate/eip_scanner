@@ -1,7 +1,7 @@
 Standard CIP Objects
 ====================
 
-**EIPScanner** provides some classes, that help the users to work with standard **CIP** objects without knowing
+**eip_scanner** provides some classes, that help the users to work with standard **CIP** objects without knowing
 their specifications.
 
 .. toctree::

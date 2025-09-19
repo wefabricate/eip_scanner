@@ -3,14 +3,14 @@
 //
 
 #include <gtest/gtest.h>
-#include "eip/CommonPacketItem.h"
-#include "eip/CommonPacketItemFactory.h"
-#include "eip/CommonPacket.h"
+#include "eip_scanner/eip/CommonPacketItem.h"
+#include "eip_scanner/eip/CommonPacketItemFactory.h"
+#include "eip_scanner/eip/CommonPacket.h"
 
-using eipScanner::eip::CommonPacket;
-using eipScanner::eip::CommonPacketItem;
-using eipScanner::eip::CommonPacketItemFactory;
-using eipScanner::eip::CommonPacketItemIds;
+using eip_scanner::eip::CommonPacket;
+using eip_scanner::eip::CommonPacketItem;
+using eip_scanner::eip::CommonPacketItemFactory;
+using eip_scanner::eip::CommonPacketItemIds;
 
 TEST(CommonPacket, ShouldExpandFromData) {
 	auto item1 = CommonPacketItemFactory().createNullAddressItem().pack();

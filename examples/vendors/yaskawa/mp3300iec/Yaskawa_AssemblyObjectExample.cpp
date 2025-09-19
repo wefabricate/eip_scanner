@@ -3,39 +3,40 @@
 #define OS_Windows (1)
 #endif
 
-#include "cip/Types.h"
 #include <functional>
 #include <sstream>
 #include <fstream>
-#include <cip/connectionManager/NetworkConnectionParams.h>
-#include "ConnectionManager.h"
-#include <DiscoveryManager.h>
-#include "FileObject.h"
-#include "fileObject/FileObjectState.h"
-#include "IdentityObject.h"
-#include "IOConnection.h"
-#include "ParameterObject.h"
-#include "SessionInfo.h"
-#include "utils/Logger.h"
-#include "utils/Buffer.h"
+#include <eip_scanner/cip/connectionManager/NetworkConnectionParams.h>
+#include <eip_scanner/ConnectionManager.h>
+#include <eip_scanner/DiscoveryManager.h>
 
-#include "vendor/yaskawa/mp3300iec/Yaskawa_EPath.h"
-#include "vendor/yaskawa/mp3300iec/Yaskawa_MessageRouter.h"
-#include "vendor/yaskawa/mp3300iec/Yaskawa_MessageRouterRequest.h"
+#include <eip_scanner/cip/Types.h>
+#include <eip_scanner/FileObject.h>
+#include <eip_scanner/fileObject/FileObjectState.h>
+#include <eip_scanner/IdentityObject.h>
+#include <eip_scanner/IOConnection.h>
+#include <eip_scanner/ParameterObject.h>
+#include <eip_scanner/SessionInfo.h>
+#include <eip_scanner/utils/Logger.h>
+#include <eip_scanner/utils/Buffer.h>
 
-using namespace eipScanner::cip;
-using eipScanner::ConnectionManager;
-using eipScanner::DiscoveryManager;
-using eipScanner::IdentityObject;
-using eipScanner::IOConnection;
-using eipScanner::Yaskawa_MessageRouter;
-using eipScanner::ParameterObject;
-using eipScanner::SessionInfo;
-using eipScanner::utils::Buffer;
-using eipScanner::utils::Logger;
-using eipScanner::utils::LogLevel;
-using eipScanner::cip::connectionManager::ConnectionParameters;
-using eipScanner::cip::connectionManager::NetworkConnectionParams;
+#include <eip_scanner/vendor/yaskawa/mp3300iec/Yaskawa_EPath.h>
+#include <eip_scanner/vendor/yaskawa/mp3300iec/Yaskawa_MessageRouter.h>
+#include <eip_scanner/vendor/yaskawa/mp3300iec/Yaskawa_MessageRouterRequest.h>
+
+using namespace eip_scanner::cip;
+using eip_scanner::ConnectionManager;
+using eip_scanner::DiscoveryManager;
+using eip_scanner::IdentityObject;
+using eip_scanner::IOConnection;
+using eip_scanner::Yaskawa_MessageRouter;
+using eip_scanner::ParameterObject;
+using eip_scanner::SessionInfo;
+using eip_scanner::utils::Buffer;
+using eip_scanner::utils::Logger;
+using eip_scanner::utils::LogLevel;
+using eip_scanner::cip::connectionManager::ConnectionParameters;
+using eip_scanner::cip::connectionManager::NetworkConnectionParams;
 
 #define YASKAWA_IP_ADDR "192.168.1.2"
 #define YASKAWA_PORT 0xAF12
@@ -101,7 +102,7 @@ std::vector<uint8_t> readBuffer(Buffer buffer, int assembly_instance_size)
  *
  *  Returns true if successful.
  */
-bool writeAssemblyObject(std::shared_ptr<eipScanner::SessionInfo> si, int assembly_instance, std::vector<uint8_t> data)
+bool writeAssemblyObject(std::shared_ptr<eip_scanner::SessionInfo> si, int assembly_instance, std::vector<uint8_t> data)
 {
     Yaskawa_MessageRouter messageRouter;
 
@@ -127,7 +128,7 @@ bool writeAssemblyObject(std::shared_ptr<eipScanner::SessionInfo> si, int assemb
  *
  *      Returns a vector of bytes that contains the response or nothing if there was an error
  */
-std::vector<uint8_t> readAssemblyObject(std::shared_ptr<eipScanner::SessionInfo> si, int assembly_instance)
+std::vector<uint8_t> readAssemblyObject(std::shared_ptr<eip_scanner::SessionInfo> si, int assembly_instance)
 {
     Yaskawa_MessageRouter messageRouter;
     std::vector<uint8_t> data_read;

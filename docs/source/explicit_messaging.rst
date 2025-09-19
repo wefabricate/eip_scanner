@@ -52,14 +52,14 @@ This sounds a bit abstract. Let's see how it will be implemented in code:
 
 .. code-block:: cpp
 
-   #include <EIPScanner/MessageRouter.h>
-   #include <EIPScanner/utils/Logger.h>
-   #include <EIPScanner/utils/Buffer.h>
+   #include <eip_scanner/MessageRouter.h>
+   #include <eip_scanner/utils/Logger.h>
+   #include <eip_scanner/utils/Buffer.h>
 
-   using eipScanner::SessionInfo;
-   using eipScanner::MessageRouter;
-   using namespace eipScanner::cip;
-   using namespace eipScanner::utils;
+   using eip_scanner::SessionInfo;
+   using eip_scanner::MessageRouter;
+   using namespace eip_scanner::cip;
+   using namespace eip_scanner::utils;
 
    int main() {
            try {
@@ -126,7 +126,7 @@ Then we should form and send a request to the *Message Router*:
 
 
 Unfortunately, we can't send the service arguments "as is". Instead we should encode them and decode the result according **CIP**
-specification. To make it easer, **EIPScanner** provides a special class :ref:`utils::Buffer<buffer>`. In this example, we encode 5 as INT type
+specification. To make it easer, **eip_scanner** provides a special class :ref:`utils::Buffer<buffer>`. In this example, we encode 5 as INT type
 and get the result as a byte vector with method *utils::Buffer::data()*.
 
 The result of the request is stroed in  *Message Router Response*:

@@ -3,9 +3,9 @@
 //
 
 #include <gtest/gtest.h>
-#include "cip/CipRevision.h"
+#include "eip_scanner/cip/CipRevision.h"
 
-using eipScanner::cip::CipRevision;
+using eip_scanner::cip::CipRevision;
 
 TEST(TestCipRevision, ShouldHaveConstructors) {
 	CipRevision revision;

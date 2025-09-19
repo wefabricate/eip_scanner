@@ -2,7 +2,7 @@
 ===================
 
 Some devices only support 8-bit path segments. In order to set up
-**EIPScanner** to use 8-bit path segments, a *MessageRouter* with the
+**eip_scanner** to use 8-bit path segments, a *MessageRouter* with the
 **USE_8_BIT_PATH_SEGMENTS** flag set should be passed to the *ConnectionManager*
 upon construction:
 
@@ -11,8 +11,8 @@ upon construction:
     #include "MessageRouter.h"
     #include "ConnectionManager.h"
 
-    using eipScanner::ConnectionManager;
-    using eipScanner::MessageRouter;
+    using eip_scanner::ConnectionManager;
+    using eip_scanner::MessageRouter;
 
     int main()
     {

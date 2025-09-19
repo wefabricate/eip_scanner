@@ -3,9 +3,9 @@
 //
 
 #include <gtest/gtest.h>
-#include "cip/EPath.h"
+#include "eip_scanner/cip/EPath.h"
 
-using eipScanner::cip::EPath;
+using eip_scanner::cip::EPath;
 
 TEST(TestEPath, ShouldExpandPaddedPath8b) {
 	std::vector<uint8_t> data = {0x20, 0x05, 0x24, 0x02, 0x30, 0x01};

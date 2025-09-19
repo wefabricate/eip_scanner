@@ -7,12 +7,12 @@
 #define OS_Windows (1)
 #endif
 
-#include <DiscoveryManager.h>
-#include <utils/Logger.h>
+#include <eip_scanner/DiscoveryManager.h>
+#include <eip_scanner/utils/Logger.h>
 
-using eipScanner::DiscoveryManager;
-using eipScanner::utils::Logger;
-using eipScanner::utils::LogLevel;
+using eip_scanner::DiscoveryManager;
+using eip_scanner::utils::Logger;
+using eip_scanner::utils::LogLevel;
 
 int main() {
   Logger::setLogLevel(LogLevel::DEBUG);

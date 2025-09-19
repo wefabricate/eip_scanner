@@ -4,7 +4,7 @@ File Object (0x37)
 *File Object* allows to transfer files between a scanner and an adapter. It might be helpful if you want to read *EDS*
 file from the **EIP** device.
 
-**EIPScanner** implements only reading files with *FileObject* class.
+**eip_scanner** implements only reading files with *FileObject* class.
 Below you can see how to read *EDS* file from the device:
 
 .. literalinclude:: ../../../examples/FileObjectExample.cpp

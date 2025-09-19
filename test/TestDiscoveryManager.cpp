@@ -6,9 +6,9 @@
 
 #include <utility>
 #include "Mocks.h"
-#include "DiscoveryManager.h"
+#include "eip_scanner/DiscoveryManager.h"
 
-using namespace eipScanner;
+using namespace eip_scanner;
 
 class TDiscoveryManager : public DiscoveryManager {
 public:

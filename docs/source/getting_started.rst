@@ -4,7 +4,7 @@ Getting Started
 Installing
 ----------
 
-**EIPScanner** provides only installing from the sources. To compile the sources, your system must meet the following
+**eip_scanner** provides only installing from the sources. To compile the sources, your system must meet the following
 requirements:
 
 * Linux or MacOS operation system
@@ -29,7 +29,7 @@ Optionally, you can build the usage examples and the unit tests by adding the fo
    cmake -DTEST_ENABLED=ON -DEXAMPLE_ENABLED=ON ..
 
 
-For successful usage of the library, it will be very helpful if you remember where **EIPScanner** have 
+For successful usage of the library, it will be very helpful if you remember where **eip_scanner** have 
 been installed.
 
 Usage
@@ -49,27 +49,21 @@ First of all, we should create *CMakeLists.txt* with the following content:
 
    add_executable(hi_eip main.cpp)
 
-   include_directories(/usr/local/include/EIPScanner)
-   target_link_libraries(hi_eip EIPScanner)
-
-
-Pay attention to the last two lines. Currently, **EIPScanner** doesn't provide a cmake module to help to find
-the library on your machine and we have to do all manually. First, we point on the include directory whose path
-should be `path/were/eipscanner/is/installed/` + `EIPScanner`. Second, we link our executable file with the library 
-`EIPScanner`. If you'd like to use the static library instead, use `EIPScannerS` name.
+   include_directories(/usr/local/include/eip_scanner)
+   target_link_libraries(hi_eip eip_scanner)
 
 Okay, we have *CMakeLists.txt*. Now we should create *main.cpp* and place there this code:
 
 .. code-block:: cpp
   
-   #include <EIPScanner/MessageRouter.h>
-   #include <EIPScanner/utils/Logger.h>
-   #include <EIPScanner/utils/Buffer.h>
+   #include <eip_scanner/MessageRouter.h>
+   #include <eip_scanner/utils/Logger.h>
+   #include <eip_scanner/utils/Buffer.h>
 
-   using eipScanner::SessionInfo;
-   using eipScanner::MessageRouter;
-   using namespace eipScanner::cip;
-   using namespace eipScanner::utils;
+   using eip_scanner::SessionInfo;
+   using eip_scanner::MessageRouter;
+   using namespace eip_scanner::cip;
+   using namespace eip_scanner::utils;
 
    int main() {
            Logger::setLogLevel(LogLevel::DEBUG);
@@ -108,10 +102,10 @@ It might happen you become the error:
 
 ::
 
-  libEIPScanner.so.1: cannot open shared object file: No such file or directory
+  libeip_scanner.so.1: cannot open shared object file: No such file or directory
 
 
-It means, your host system didn't manage to find **EIPScanner**'s shared library. We can help it:
+It means, your host system didn't manage to find **eip_scanner**'s shared library. We can help it:
 
 ::
 
@@ -121,4 +115,4 @@ It means, your host system didn't manage to find **EIPScanner**'s shared library
 Try again and it must work. If you failed again, then `a bug report`_ will be welcomed. 
 
 
-.. _a bug report: https://github.com/nimbuscontrols/EIPScanner/issues
+.. _a bug report: https://github.com/nimbuscontrols/eip_scanner/issues

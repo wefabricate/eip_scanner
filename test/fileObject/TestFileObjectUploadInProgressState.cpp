@@ -4,15 +4,15 @@
 #include <gtest/gtest.h>
 #include <gmock/gmock.h>
 
-#include "Mocks.h"
-#include "FileObject.h"
-#include "fileObject/FileObjectUploadInProgressState.h"
-#include "utils/Buffer.h"
+#include "FileObjectMocks.h"
+#include "eip_scanner/FileObject.h"
+#include "eip_scanner/fileObject/FileObjectUploadInProgressState.h"
+#include "eip_scanner/utils/Buffer.h"
 
-using namespace eipScanner;
-using eipScanner::fileObject::FileObjectUploadInProgressState;
-using eipScanner::fileObject::FILE_OBJECT_CLASS_ID;
-using eipScanner::fileObject::TransferPacketTypeCodes;
+using namespace eip_scanner;
+using eip_scanner::fileObject::FileObjectUploadInProgressState;
+using eip_scanner::fileObject::FILE_OBJECT_CLASS_ID;
+using eip_scanner::fileObject::TransferPacketTypeCodes;
 using utils::Buffer;
 
 using ::testing::Return;

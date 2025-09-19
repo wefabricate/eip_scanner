@@ -8,15 +8,15 @@
 #endif
 
 #include <fstream>
-#include "FileObject.h"
-#include "utils/Logger.h"
-#include "fileObject/FileObjectState.h"
+#include <eip_scanner/FileObject.h>
+#include <eip_scanner/utils/Logger.h>
+#include <eip_scanner/fileObject/FileObjectState.h>
 
-using namespace eipScanner::cip;
-using eipScanner::SessionInfo;
-using eipScanner::utils::Logger;
-using eipScanner::utils::LogLevel;
-using eipScanner::FileObject;
+using namespace eip_scanner::cip;
+using eip_scanner::SessionInfo;
+using eip_scanner::utils::Logger;
+using eip_scanner::utils::LogLevel;
+using eip_scanner::FileObject;
 
 int main() {
   Logger::setLogLevel(LogLevel::DEBUG);

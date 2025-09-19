@@ -1,10 +1,10 @@
-Welcome to EIPScanner's documentation!
+Welcome to eip_scanner's documentation!
 ======================================
 
 About
 -----
 
-EIPScanner is a free implementation of Ethernet/IP scanner in C++.
+eip_scanner is a free implementation of Ethernet/IP scanner in C++.
 
 .. toctree::
    :maxdepth: 2
