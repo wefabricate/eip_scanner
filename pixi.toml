@@ -29,7 +29,7 @@ install = "cmake --build build --target install --config RelWithDebInfo"
 
 [target.unix.tasks]
 test = "build/test/test_eipscanner"
-clean = "rm -rf build examples/build $CONDA_PREFIX/include/eip_scanner $CONDA_PREFIX/lib/libeip_scanner* $CONDA_PREFIX/share/eip_scanner"
+clean = "rm -rf build examples/build $CONDA_PREFIX/include/eip_scanner $CONDA_PREFIX/lib/libeip_scanner* $CONDA_PREFIX/lib/cmake/eip_scanner"
 
 [target.win-64.tasks]
 test = "build/test/RelWithDebInfo/test_eipscanner.exe"
