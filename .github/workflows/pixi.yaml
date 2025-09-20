@@ -1,0 +1,37 @@
+name: build and test with pixi
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  pixi_conda_build:
+    strategy:
+      fail-fast: false
+      matrix:
+        os:
+          - windows-latest
+          - ubuntu-latest
+          - macos-latest
+    runs-on: ${{ matrix.os }}
+    steps:
+      # Pixi is the tool used to create/manage conda environment
+      - uses: actions/checkout@v3
+      - uses: prefix-dev/setup-pixi@v0.8.1
+        with:
+          pixi-version: v0.55.0
+      - name: Build
+        run: pixi run build-shared
+      - name: Install
+        run: pixi run install
+      - name: Build tests and examples
+        run: pixi run build-tests-examples
+      - name: Run tests
+        run: pixi run test

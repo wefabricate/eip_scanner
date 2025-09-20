@@ -5,10 +5,10 @@
 
 #include <gtest/gtest.h>
 #include "Mocks.h"
-#include "vendor/ra/powerFlex525/DPIFaultObject.h"
+#include "eip_scanner/vendor/ra/powerFlex525/DPIFaultObject.h"
 
-using namespace eipScanner;
-using namespace eipScanner::vendor::ra::powerFlex525;
+using namespace eip_scanner;
+using namespace eip_scanner::vendor::ra::powerFlex525;
 
 class TestDPIFaultObject : public ::testing::Test {
 public:

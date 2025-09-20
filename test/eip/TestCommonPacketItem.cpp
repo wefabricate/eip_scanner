@@ -3,11 +3,11 @@
 //
 
 #include <gtest/gtest.h>
-#include "eip/CommonPacketItem.h"
-#include "eip/CommonPacketItemFactory.h"
+#include "eip_scanner/eip/CommonPacketItem.h"
+#include "eip_scanner/eip/CommonPacketItemFactory.h"
 
-using eipScanner::eip::CommonPacketItem;
-using eipScanner::eip::CommonPacketItemFactory;
+using eip_scanner::eip::CommonPacketItem;
+using eip_scanner::eip::CommonPacketItemFactory;
 
 TEST(CommonPacketItem, UnconnectedDataItem) {
 	std::vector<uint8_t> data = {1, 2, 3, 4};

@@ -4,7 +4,7 @@ Discovery
 **EtherNet/IP** allows to discover **EIP** devices in the network
 by using UDP broadcast messages.
 
-**EIPScanner** provides *DiscoveryManager* class for this purpose:
+**eip_scanner** provides *DiscoveryManager* class for this purpose:
 
 .. literalinclude:: ../../examples/DiscoveryManagerExample.cpp
 

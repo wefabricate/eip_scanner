@@ -4,15 +4,15 @@
 
 #include <gtest/gtest.h>
 #include "Mocks.h"
-#include "MessageRouter.h"
-#include "eip/CommonPacket.h"
-#include "eip/CommonPacketItem.h"
-#include "eip/CommonPacketItemFactory.h"
-#include "eip/EncapsPacketFactory.h"
-#include "cip/MessageRouterRequest.h"
-#include "cip/MessageRouterResponse.h"
+#include "eip_scanner/MessageRouter.h"
+#include "eip_scanner/eip/CommonPacket.h"
+#include "eip_scanner/eip/CommonPacketItem.h"
+#include "eip_scanner/eip/CommonPacketItemFactory.h"
+#include "eip_scanner/eip/EncapsPacketFactory.h"
+#include "eip_scanner/cip/MessageRouterRequest.h"
+#include "eip_scanner/cip/MessageRouterResponse.h"
 
-using namespace eipScanner;
+using namespace eip_scanner;
 
 TEST(TestMessageRouter, ShouldFormAndParseCommonPackets) {
 	auto mockSession = std::make_shared<TMockSessionInfo>();

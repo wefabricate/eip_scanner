@@ -3,11 +3,11 @@
 //
 
 #include <gtest/gtest.h>
-#include "eip/EncapsPacket.h"
+#include "eip_scanner/eip/EncapsPacket.h"
 
-using eipScanner::eip::EncapsPacket;
-using eipScanner::eip::EncapsCommands;
-using eipScanner::eip::EncapsStatusCodes;
+using eip_scanner::eip::EncapsPacket;
+using eip_scanner::eip::EncapsCommands;
+using eip_scanner::eip::EncapsStatusCodes;
 
 TEST(TestEncapsPacket, ShouldExpandData) {
 	std::vector<uint8_t> data = {0x6F, 0, 0xB, 0, 0xDD, 0xCC, 0xBB, 0xAA, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,

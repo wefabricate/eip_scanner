@@ -3,7 +3,7 @@ Parameter Object (0x0f)
 
 *Parameter Object* provides a standard way to access to data and configuration of the **CIP** device.
 
-**EIPScanner** has special class *ParameterObject* to read an parameter, but before use it you should
+**eip_scanner** has special class *ParameterObject* to read an parameter, but before use it you should
 know:
 
     1. *Instance ID* of the parameter or how many parameters the device has to read all of them

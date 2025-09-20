@@ -5,7 +5,7 @@ Implicit Messaging
 IO connections, so that they can send data each other periodically or then the
 data have changed.
 
-In order to establish and handle IO connections through UDP, **EIPScanner** provides 
+In order to establish and handle IO connections through UDP, **eip_scanner** provides 
 *ConnectionManager* class, that has *forwardOpen* method where we can pass all the parameters
 of the connections. The method returns an instance of *IOConnection* class, which we can use 
 to handle the received data from the adapter and send the our data to it. 
@@ -20,15 +20,15 @@ to handle the received data from the adapter and send the our data to it.
    #include "utils/Logger.h"
    #include "utils/Buffer.h"
 
-   using namespace eipScanner::cip;
-   using eipScanner::SessionInfo;
-   using eipScanner::MessageRouter;
-   using eipScanner::ConnectionManager;
-   using eipScanner::cip::connectionManager::ConnectionParameters;
-   using eipScanner::cip::connectionManager::NetworkConnectionParams;
-   using eipScanner::utils::Buffer;
-   using eipScanner::utils::Logger;
-   using eipScanner::utils::LogLevel;
+   using namespace eip_scanner::cip;
+   using eip_scanner::SessionInfo;
+   using eip_scanner::MessageRouter;
+   using eip_scanner::ConnectionManager;
+   using eip_scanner::cip::connectionManager::ConnectionParameters;
+   using eip_scanner::cip::connectionManager::NetworkConnectionParams;
+   using eip_scanner::utils::Buffer;
+   using eip_scanner::utils::Logger;
+   using eip_scanner::utils::LogLevel;
 
    int main() {
            Logger::setLogLevel(LogLevel::DEBUG);
@@ -167,7 +167,7 @@ In this snippet, we set the data to send and subscribe on the two events: the da
    Some device can ignore this data and close the connection by timeout. 
 
 
-To open a connection and set the listeners are not enough to make it work. **EIPScanner** is a single thread library and we 
+To open a connection and set the listeners are not enough to make it work. **eip_scanner** is a single thread library and we 
 need periodically to handle these connections:
 
 .. code-block:: cpp

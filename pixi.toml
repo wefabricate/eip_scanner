@@ -1,0 +1,45 @@
+[workspace]
+channels = ["conda-forge"]
+name = "eip_scanner"
+platforms = ["linux-64", "win-64", "osx-64", "osx-arm64"]
+version = "0.1.0"
+
+[target.win-64.activation.env]
+CMAKE_INSTALL_PREFIX = "%CONDA_PREFIX%/Library"
+# LIBRARY_PATH=
+
+[target.unix.activation.env]
+CMAKE_INSTALL_PREFIX = "$CONDA_PREFIX"
+
+[tasks.build]
+args = [
+  { "arg" = "build_switches", "default" = "" }, # build shared libs
+
+]
+cmd = "mkdir -p build && cd build && cmake ../ -DCMAKE_BUILD_TYPE=RelWithDebInfo {{build_switches}} && cmake --build . --parallel --config RelWithDebInfo"
+
+[tasks.build-shared]
+depends-on = [{"task" = "build", "args" = ["-DBUILD_SHARED_LIBS=ON"]}]
+
+[tasks.build-tests-examples]
+depends-on = [{"task" = "build", "args" = ["-DTEST_ENABLED=ON -DEXAMPLE_ENABLED=ON"]}]
+
+[tasks]
+install = "cmake --build build --target install --config RelWithDebInfo"
+
+[target.unix.tasks]
+test = "build/test/test_eipscanner"
+clean = "rm -rf build examples/build $CONDA_PREFIX/include/eip_scanner $CONDA_PREFIX/lib/libeip_scanner* $CONDA_PREFIX/lib/cmake/eip_scanner"
+
+[target.win-64.tasks]
+test = "build/test/RelWithDebInfo/test_eipscanner.exe"
+clean = "rm -rf build examples/build $CONDA_PREFIX/Library/include/eip_scanner $CONDA_PREFIX/Library/lib/cmake/eip_scanner $CONDA_PREFIX/Library/bin/eip_scanner.dll $CONDA_PREFIX/Library/lib/eip_scanner.lib"
+
+[dependencies]
+cmake = ">=3.16,<4"
+cxx-compiler = ">=1.11.0,<2"
+gmock = ">=1.17.0,<2"
+gtest = ">=1.17.0,<2"
+
+[target.linux-64.dependencies]
+lttng-ust = ">=2.13.9,<3"
